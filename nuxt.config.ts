@@ -8,12 +8,28 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css",
         },
+        {
+          rel: "icon",
+          href: "https://i.ibb.co/PQ4mRtC/myphoto-Round.png",
+        }
       ],
       meta: [
         {
           property: "og:title",
-          content: "I am a full stack web developer",
+          content: "Shahboz Mamatkarimov",
         },
+        {
+          property: "og:image",
+          content: "https://i.ibb.co/mG0QZyr/myphoto.jpg"
+        },
+        {
+          property: "og:description",
+          content: "Full Stack NodeJS developer",
+        },
+        {
+          name: "description",
+          content: "Full Stack NodeJS developer"
+        }
       ],
     },
   },
