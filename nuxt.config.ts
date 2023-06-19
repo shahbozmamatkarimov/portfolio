@@ -20,7 +20,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:image",
-          content: "https://i.ibb.co/mG0QZyr/myphoto.jpg"
+          content: "https://ibb.co/TcDfsK9"
         },
         {
           property: "og:description",
