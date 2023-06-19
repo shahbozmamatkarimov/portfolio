@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:description",
-          content: "Full Stack NodeJS developer",
+          content: "Full stack NodeJS developer",
         },
         {
           name: "description",
