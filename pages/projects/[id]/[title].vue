@@ -62,7 +62,7 @@ const SendMessage = () => {
     if (!token) {
         router.push('/login')
     }
-    fetch('http://localhost:4000/api/comment/create', {
+    fetch('https://portfolio-wanw.onrender.com/api/comment/create', {
         method: 'POST',
         headers: { "Content-Type": "application/json", 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({
@@ -85,7 +85,7 @@ const SendMessage = () => {
 }
 
 const GetMessages = () => {
-    fetch('http://localhost:4000/api/comment/findall')
+    fetch('https://portfolio-wanw.onrender.com/api/comment/findall')
         .then(data => {
             return data.json();
         })

@@ -128,7 +128,7 @@
 
 <script setup>
 const { data, error } = await useFetch(
-  "http://localhost:4000/api/project/findall"
+  "https://portfolio-wanw.onrender.com/api/project/findall"
 );
 
 console.log(error);

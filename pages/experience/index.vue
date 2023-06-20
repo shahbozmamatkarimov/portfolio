@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-const { data, error } = await useFetch('http://localhost:4000/api/experience/findall');
+const { data, error } = await useFetch('https://portfolio-wanw.onrender.com/api/experience/findall');
 console.log(error);
 </script>
 

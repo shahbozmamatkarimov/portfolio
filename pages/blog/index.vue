@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-const { data, error } = await useFetch("http://localhost:4000/api/content/findall")
+const { data, error } = await useFetch("https://portfolio-wanw.onrender.com/api/content/findall")
 console.log(error);
 
 const content = async () => {

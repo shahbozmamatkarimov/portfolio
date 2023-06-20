@@ -189,7 +189,7 @@ const comments = (id, title) => {
   router.push(`/projects/${id}/${title.split(" ").join("_")}`);
 };
 
-fetch("http://localhost:4000/api/project/findall")
+fetch("https://portfolio-wanw.onrender.com/api/project/findall")
   .then((data) => {
     return data.json();
   })
@@ -201,7 +201,7 @@ fetch("http://localhost:4000/api/project/findall")
   });
 
 const contentFunc = async () => {
-  fetch("http://localhost:4000/api/content/findall")
+  fetch("https://portfolio-wanw.onrender.com/api/content/findall")
     .then((data) => {
       return data.json();
     })
@@ -229,7 +229,7 @@ const contentFunc = async () => {
 };
 
 const descriptionFunc = async () => {
-  fetch("http://localhost:4000/api/profile/findall")
+  fetch("https://portfolio-wanw.onrender.com/api/profile/findall")
     .then((data) => {
       return data.json();
     })
@@ -242,7 +242,7 @@ const descriptionFunc = async () => {
 };
 
 const skillsFunc = async () => {
-  fetch("http://localhost:4000/api/skills/findall")
+  fetch("https://portfolio-wanw.onrender.com/api/skills/findall")
     .then((data) => {
       return data.json();
     })
