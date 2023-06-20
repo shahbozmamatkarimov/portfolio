@@ -92,6 +92,7 @@
 
 <script setup>
 import { navbar } from "../constants/navbar";
+import axios from 'axios'
 
 const store = reactive({
   description: "",
@@ -103,11 +104,9 @@ const store = reactive({
 });
 
 const descriptionFunc = async () => {
-  fetch("https://portfolio-wanw.onrender.com/api/profile/findall")
+  axios.get("https://portfolio-wanw.onrender.com/api/profile/findall")
     .then((data) => {
-      return data.json();
-    })
-    .then((data) => {
+      data = data.data
       store.description = data[0].description;
       store.location =
         data[0].city + "," + data[0].district + "," + data[0].address;
@@ -120,12 +119,9 @@ const descriptionFunc = async () => {
 };
 
 const skillsFunc = async () => {
-  fetch("https://portfolio-wanw.onrender.com/api/skills/findall")
+  axios.get("https://portfolio-wanw.onrender.com/api/skills/findall")
     .then((data) => {
-      return data.json();
-    })
-    .then((data) => {
-      store.skills = data;
+      store.skills = data.data;
     })
     .catch((error) => {
       console.log(error);
@@ -133,12 +129,10 @@ const skillsFunc = async () => {
 };
 
 const networkFunc = async () => {
-  fetch("https://portfolio-wanw.onrender.com/api/socialnetworks/findall")
+  axios.get("https://portfolio-wanw.onrender.com/api/socialnetworks/findall")
     .then((data) => {
-      return data.json();
-    })
-    .then((data) => {
-      store.networks = data;
+      console.log(data);
+      store.networks = data.data;
     })
     .catch((error) => {
       console.log(error);

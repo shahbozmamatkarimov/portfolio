@@ -4,15 +4,22 @@
       <section
         class="flex justify-between items-center lg:flex-row flex-col lg:mb-0 mb-20 relative -mt-20 gap-20 min-h-[95vh]"
       >
-        <div class="md:text-3xl text-xl md:leading-[4rem] leading-5 pt-20 lg:w-[55%] w-full">
+        <div
+          class="md:text-3xl text-xl md:leading-[4rem] leading-5 pt-20 lg:w-[55%] w-full"
+        >
           <h1 class="font-bold">Hello everyone,</h1>
           <h1 class="font-bold text-gray-200 leading-9 pb-4">
-            <span class="min-w-fit inline-block">I am</span> <span class="min-w-fit inline-block">a full stack web developer.</span>
+            <span class="min-w-fit inline-block">I am</span>
+            <span class="min-w-fit inline-block"
+              >a full stack web developer.</span
+            >
           </h1>
           <p class="text-gray-300 font-medium">
             {{ store.description }}
           </p>
-          <div class="flex justify-between md:text-xl text-sm items-center min-w-fit py-10">
+          <div
+            class="flex justify-between md:text-xl text-sm items-center min-w-fit py-10"
+          >
             <router-link to="/projects">
               <button
                 class="flex gap-2 items-center font-bold bg-[#faab0d] border-4 border-[#faab0d] hover:bg-transparent py-2 md:px-10 px-5 rounded-lg"
@@ -35,10 +42,14 @@
           />
         </div>
       </section>
-      <section class="flex flex-col justify-center items-center mx-auto min-h-screen">
+      <section
+        class="flex flex-col justify-center items-center mx-auto min-h-screen"
+      >
         <div class="mx-auto w-full">
           <div class="flex justify-between items-end">
-            <h2 class="md:text-3xl text-lg lg:text-4xl tracking-tight font-extrabold">
+            <h2
+              class="md:text-3xl text-lg lg:text-4xl tracking-tight font-extrabold"
+            >
               Recent projects
             </h2>
             <p class="text-[#faab0d] font-bold">
@@ -145,7 +156,9 @@
       <section class="flex justify-center items-center min-h-screen">
         <div class="py-8 mx-auto w-full">
           <div class="flex justify-between items-center h-12 md:pb-0 pb-5">
-            <h2 class="md:mb-4 md:text-3xl text-lg lg:text-4xl tracking-tight font-extrabold">
+            <h2
+              class="md:mb-4 md:text-3xl text-lg lg:text-4xl tracking-tight font-extrabold"
+            >
               Recent posts
             </h2>
             <p class="text-[#faab0d] font-bold">
@@ -161,14 +174,18 @@
         </h2>
 
         <div>
-          <ul class="flex justify-center items-center flex-wrap sm:mb-0 mb-20 gap-10">
+          <ul
+            class="flex justify-center items-center flex-wrap sm:mb-0 mb-20 gap-10"
+          >
             <li class="text-center" v-for="i in store.skills" :key="i">
               <img
                 class="rounded-full lg:h-40 md:h-20 sm:h-16 h-10 object-cover"
                 :src="i.image"
                 alt="img"
               />
-              <p class="text-white font-bold sm:text-md text-xs">{{ i.name }}</p>
+              <p class="text-white font-bold sm:text-md text-xs">
+                {{ i.name }}
+              </p>
             </li>
           </ul>
         </div>
@@ -178,6 +195,8 @@
 </template>
 
 <script setup>
+import axios from "axios";
+
 const store = reactive({
   skills: "",
   projects: "",
@@ -189,10 +208,8 @@ const comments = (id, title) => {
   router.push(`/projects/${id}/${title.split(" ").join("_")}`);
 };
 
-fetch("https://portfolio-wanw.onrender.com/api/project/findall")
-  .then((data) => {
-    return data.json();
-  })
+axios
+  .get("https://portfolio-wanw.onrender.com/api/project/findall")
   .then((post) => {
     store.projects = post;
   })
@@ -201,10 +218,8 @@ fetch("https://portfolio-wanw.onrender.com/api/project/findall")
   });
 
 const contentFunc = async () => {
-  fetch("https://portfolio-wanw.onrender.com/api/content/findall")
-    .then((data) => {
-      return data.json();
-    })
+  axios
+    .get("https://portfolio-wanw.onrender.com/api/content/findall")
     .then((content) => {
       const contents = document.querySelector("#contents");
       if (contents.innerHTML == "") {
@@ -229,9 +244,9 @@ const contentFunc = async () => {
 };
 
 const descriptionFunc = async () => {
-  fetch("https://portfolio-wanw.onrender.com/api/profile/findall")
-    .then((data) => {
-      return data.json();
+  axios({
+      method: "get",
+      url: "https://portfolio-wanw.onrender.com/api/profile/findall",
     })
     .then((data) => {
       store.description = data[0].description;
@@ -242,10 +257,8 @@ const descriptionFunc = async () => {
 };
 
 const skillsFunc = async () => {
-  fetch("https://portfolio-wanw.onrender.com/api/skills/findall")
-    .then((data) => {
-      return data.json();
-    })
+  axios
+    .get("https://portfolio-wanw.onrender.com/api/skills/findall")
     .then((data) => {
       store.skills = data;
     })
