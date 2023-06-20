@@ -103,7 +103,7 @@ const store = reactive({
 });
 
 const descriptionFunc = async () => {
-  fetch("http://localhost:4000/api/profile/findall")
+  fetch("https://portfolio-wanw.onrender.com/api/profile/findall")
     .then((data) => {
       return data.json();
     })
@@ -120,7 +120,7 @@ const descriptionFunc = async () => {
 };
 
 const skillsFunc = async () => {
-  fetch("http://localhost:4000/api/skills/findall")
+  fetch("https://portfolio-wanw.onrender.com/api/skills/findall")
     .then((data) => {
       return data.json();
     })
@@ -133,7 +133,7 @@ const skillsFunc = async () => {
 };
 
 const networkFunc = async () => {
-  fetch("http://localhost:4000/api/socialnetworks/findall")
+  fetch("https://portfolio-wanw.onrender.com/api/socialnetworks/findall")
     .then((data) => {
       return data.json();
     })
