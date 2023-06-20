@@ -2,7 +2,7 @@
     <div>
         <Navbar />
         <div id="main" class="overflow-hidden overflow-y-auto max-h-screen">
-            <div class="pt-32 px-40">
+            <div class="lg:pt-32 pt-20 lg:px-40 md:px-20 sm:px-10 px-5">
                 <slot />
 
             </div>
