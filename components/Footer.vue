@@ -47,7 +47,7 @@
                 />
                 <p class="text-black text-xs">{{ i.name }}</p>
               </li> -->
-              <li class="text-center" v-for="i in store.skills" :key="i">
+              <li class="text-center">
                 <img
                   class="rounded-full w-10 h-10 object-cover"
                   src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_640.png"

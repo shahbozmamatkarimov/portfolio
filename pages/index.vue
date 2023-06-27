@@ -505,7 +505,7 @@
                 {{ i.name }}
               </p>
             </li> -->
-            <li class="text-center" v-for="i in store.skills" :key="i">
+            <li class="text-center">
               <img
                 class="rounded-full lg:h-40 lg:w-40 md:h-20 md:w-20 sm:h-16 sm:w-16 w-10 h-10 object-cover"
                 src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_640.png"
