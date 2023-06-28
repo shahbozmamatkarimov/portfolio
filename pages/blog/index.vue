@@ -1,10 +1,10 @@
 <template>
-  <main class="min-h-screen">
+  <main class="min-h-screen pb-10">
     <section>
       <!-- <div id="contents"></div> -->
       <div id="contents" class="flex flex-col justify-between gap-5">
         <div
-          class="bg-white text-black p-2 rounded-lg border-b-4 border-r-2 w-[70%] border-gray-600 shadow-md shadow-white"
+          class="bg-white text-black p-2 rounded-lg border-b-4 border-r-2 lg:w-[70%] w-full border-gray-600 shadow-md shadow-white"
           v-for="i in 3"
           :key="i"
         >

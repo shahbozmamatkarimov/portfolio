@@ -24,7 +24,7 @@
       </div>
     </header> -->
     <main>
-      <section class="container mx-auto p-6">
+      <section class="container mx-auto p-6 -mt-10">
         <div>
           <div
             class="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mt-6"
