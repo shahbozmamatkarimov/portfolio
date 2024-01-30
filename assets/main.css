@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overflow: hidden;
+  overflow: auto;
+}
+
+.animate_scroll {
+  animation: scrollAnimation 10s infinite;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-76%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-left: 1px solid white;
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
