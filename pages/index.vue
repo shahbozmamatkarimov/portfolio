@@ -526,8 +526,8 @@ useSeoMeta({
   description: "I am a full stack web developer",
   keywords: "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
   ogDescription: "I am a full stack web developer",
-  ogImage: "/myphoto.png",
-  twitterCard: "/myphoto.png",
+  ogImage: "/logo.svg",
+  twitterCard: "/logo.svg",
 });
 </script>
 
