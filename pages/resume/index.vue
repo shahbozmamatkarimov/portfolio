@@ -104,12 +104,13 @@
             ></div>
             <h1 class="uppercase font-bold mb-4">Personal Introduction</h1>
             <p class="mb-1 leading-5 font-medium text-gray-100">
-              To join a professional organization where I can gain my experience
-              to my best with a challenging job that will develop my career in
-              this field. I am a web designer with more than 9 years of rich
-              experience in developing and implementing interactive websites. I
-              am focused on completing projects within the required time frame
-              with elegant, attractive and user friendly interface.
+              Highly skilled Full Stack Web Developer with 2023 experience in
+              designing, developing and maintaining dynamic web applications.
+              Adept at translating complex business requirements into scalable
+              and robust solutions, I bring a comprehensive skill set that spans
+              frontend and backend technologies. My passion for clean, efficient
+              code and my commitment to staying abreast of emerging trends in
+              web development make me a valuable asset to any project.
             </p>
           </div>
         </li>
