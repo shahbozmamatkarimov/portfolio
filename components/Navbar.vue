@@ -16,7 +16,7 @@
       >
         <div class="sm:flex hidden gap-5">
           <router-link
-            to="/#"
+            to="/#home"
             class="text-neutral-400 text-center font-medium leading-7"
           >
             Home
@@ -83,7 +83,7 @@
       class="sm:hidden flex flex-col items-center justify-between text-2xl fixed top-[55px] py-10 min-h-[calc(100vh_-_73px)] max-h-[calc(100vh_-_73px)] overflow-hidden overflow-y-auto backdrop-blur-lg w-full md:px-10 px-5 gap-10"
     >
       <router-link
-        to="/#"
+        to="/#home"
         class="text-neutral-400 text-center font-medium leading-7"
       >
         Home

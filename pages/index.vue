@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center py-12 md:px-10 px-5">
     <div class="flex w-full max-w-[1800px] flex-col mb-3.5 max-md:max-w-full">
-      <div id="#home" class="justify-center self-stretch md:mt-24">
+      <div id="home" class="justify-center self-stretch md:mt-24">
         <div class="gap-5 md:flex">
           <div
             class="flex flex-col xl:mt-0 -mt-16 md:w-[67%] bg-[url('')] bg-cover"
