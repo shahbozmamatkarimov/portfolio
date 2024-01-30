@@ -515,6 +515,22 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  title: "Shahboz Mamatkarimov",
+  meta: [{ name: "description", content: "Full stack web developer" }],
+});
+useSeoMeta({
+  title: "Shahboz Mamatkarimov",
+  ogTitle: "Shahboz Mamatkarimov",
+  description: "I am a full stack web developer",
+  keywords: "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
+  ogDescription: "I am a full stack web developer",
+  ogImage: "/myphoto.png",
+  twitterCard: "/myphoto.png",
+});
+</script>
+
 <style lang="scss">
 h1 {
   font-size: 20px;

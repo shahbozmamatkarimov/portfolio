@@ -89,6 +89,20 @@
 </template>
 
 <script setup>
+useHead({
+  title: "Shahboz Mamatkarimov - contact",
+  meta: [{ name: "description", content: "Full stack web developer" }],
+});
+useSeoMeta({
+  title: "Shahboz Mamatkarimov - contact",
+  ogTitle: "Shahboz Mamatkarimov",
+  description: "I am a full stack web developer",
+  keywords: "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
+  ogDescription: "I am a full stack web developer",
+  ogImage: "/myphoto.png",
+  twitterCard: "/myphoto.png",
+});
+
 import axios from "axios";
 
 const store = reactive({
