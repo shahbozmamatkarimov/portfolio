@@ -16,7 +16,7 @@
         <img class="w-7 min-w-[28px]" src="@/assets/resume/email.svg" alt="" />
         <div>
           <p class="font-[900]">Email</p>
-          <p class="break-words w-[90%]">shahbozmamatkarimov2303@gmail.com</p>
+          <p class="break-words w-[90%] lg:whitespace-nowrap">shahbozmamatkarimov2303@gmail.com</p>
         </div>
       </div>
       <div class="flex items-center gap-5">
