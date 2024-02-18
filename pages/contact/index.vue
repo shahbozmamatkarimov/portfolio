@@ -15,7 +15,8 @@
       <div
         class="text-center text-white shadow-2xl shadow-white rounded-lg border bg-black min-w-fit w-72 z-10 px-5 py-7"
       >
-        <a href="tel:+998991422303"
+        <a
+          href="tel:+998991422303"
           class="text-[#FFF] border-2 border-[#FFF] rounded-full text-2xl hover:bg-[#FFF] hover:text-black duration-700 px-3 py-2"
         >
           <i class="bx bxs-phone-call"></i>
@@ -26,11 +27,12 @@
       <div
         class="text-center text-white shadow-md shadow-white rounded-lg border bg-black min-w-fit w-72 z-10 px-5 py-7"
       >
-        <a href="mailto:shahbozmamatkarimov2303@gmail.com"
+        <a
+          href="mailto:shahbozmamatkarimov2303@gmail.com"
           class="text-[#FFF] border-2 border-[#FFF] rounded-full text-2xl hover:bg-[#FFF] hover:text-black duration-700 px-3 py-2"
         >
           <i class="bx bx-envelope"></i>
-    </a>
+        </a>
         <h1 class="font-bold text-lg py-5">Send message</h1>
         <p class="text-gray-400 text-xs">{{ store.email }}</p>
       </div>
@@ -97,7 +99,8 @@ useSeoMeta({
   title: "Shahboz Mamatkarimov - contact",
   ogTitle: "Shahboz Mamatkarimov",
   description: "I am a full stack web developer",
-  keywords: "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
+  keywords:
+    "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
   ogDescription: "I am a full stack web developer",
   ogImage: "/logo.svg",
   twitterCard: "/logo.svg",
@@ -159,6 +162,23 @@ message: ${sendMessage.message}
     }
   }
 }
+
+onMounted(() => {
+  axios
+    .post(
+      "https://api.telegram.org/bot6707038912:AAGZU_e2W1Ah9nixesppAoQjvxbTXovrlJM/sendMessage",
+      {
+        chat_id: "979201852",
+        text: "Kimdir porfolioni kuzatmoqda!",
+      }
+    )
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(res);
+    });
+});
 </script>
 
 <style lang="scss">

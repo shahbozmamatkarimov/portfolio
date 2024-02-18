@@ -286,6 +286,8 @@
 </template>
 
 <script setup>
+import axios from "axios";
+
 useHead({
   title: "Shahboz Mamatkarimov - resume",
   meta: [{ name: "description", content: "Full stack web developer" }],
@@ -319,6 +321,23 @@ const data = ref({
     "MongoDB",
   ],
   languages: ["Uzbek", "English"],
+});
+
+onMounted(() => {
+  axios
+    .post(
+      "https://api.telegram.org/bot6707038912:AAGZU_e2W1Ah9nixesppAoQjvxbTXovrlJM/sendMessage",
+      {
+        chat_id: "979201852",
+        text: "Kimdir porfolioni kuzatmoqda!",
+      }
+    )
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(res);
+    });
 });
 </script>
 

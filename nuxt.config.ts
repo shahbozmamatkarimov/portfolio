@@ -23,7 +23,6 @@ export default defineNuxtConfig({
   imports: {
     autoImport: true,
   },
-
   css: ["~/assets/main.css"],
   postcss: {
     plugins: {

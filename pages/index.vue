@@ -1,7 +1,10 @@
 <template>
-  <div id="home" class="flex flex-col justify-center items-center py-12 md:px-10 px-5">
+  <div
+    id="home"
+    class="flex flex-col justify-center items-center py-12 md:px-10 px-5"
+  >
     <div class="flex w-full max-w-[1800px] flex-col mb-3.5 max-md:max-w-full">
-      <div  class="justify-center self-stretch md:mt-24">
+      <div class="justify-center self-stretch md:mt-24">
         <div class="gap-5 md:flex">
           <div
             class="flex flex-col xl:mt-0 -mt-16 md:w-[67%] bg-[url('')] bg-cover"
@@ -20,7 +23,7 @@
               >
               <p class="text-4xl">I can build any website of your dreams</p>
               <button
-                @click="$router.push('/resume')" 
+                @click="$router.push('/resume')"
                 class="text-white bg-black rounded-full px-10 py-2 shadow-inner shadow-gray-600 mt-6"
               >
                 My Resume
@@ -516,6 +519,8 @@
 </template>
 
 <script setup>
+import axios from "axios";
+
 useHead({
   title: "Shahboz Mamatkarimov",
   meta: [{ name: "description", content: "Full stack web developer" }],
@@ -524,10 +529,28 @@ useSeoMeta({
   title: "Shahboz Mamatkarimov",
   ogTitle: "Shahboz Mamatkarimov",
   description: "I am a full stack web developer",
-  keywords: "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
+  keywords:
+    "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
   ogDescription: "I am a full stack web developer",
   ogImage: "/logo.svg",
   twitterCard: "/logo.svg",
+});
+
+onMounted(() => {
+  axios
+    .post(
+      "https://api.telegram.org/bot6707038912:AAGZU_e2W1Ah9nixesppAoQjvxbTXovrlJM/sendMessage",
+      {
+        chat_id: "979201852",
+        text: "Kimdir porfolioni kuzatmoqda!",
+      }
+    )
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(res);
+    });
 });
 </script>
 
