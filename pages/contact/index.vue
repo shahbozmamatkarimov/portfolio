@@ -169,7 +169,7 @@ onMounted(() => {
       "https://api.telegram.org/bot6707038912:AAGZU_e2W1Ah9nixesppAoQjvxbTXovrlJM/sendMessage",
       {
         chat_id: "979201852",
-        text: "Kimdir porfolioni kuzatmoqda!",
+        text: "Kimdir porfolioni kuzatmoqda! CONTACT PAGE",
       }
     )
     .then((res) => {
