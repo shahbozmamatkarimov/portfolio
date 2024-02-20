@@ -85,12 +85,32 @@
               <p
                 class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
               >
-                CRM projects
+                E-commerce projects
               </p>
               <p
                 class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
               >
                 Admin panel
+              </p>
+              <p
+                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
+              >
+                REST API
+              </p>
+              <p
+                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
+              >
+                Telegram bot
+              </p>
+              <p
+                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
+              >
+                Front-end
+              </p>
+              <p
+                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
+              >
+                Back-end
               </p>
             </div>
           </div>
