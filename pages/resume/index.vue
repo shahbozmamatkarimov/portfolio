@@ -179,7 +179,7 @@
                   <p>Frontend Developer</p>
                 </div>
                 <div class="text-end">
-                  <p>08/2023 - 01/2023</p>
+                  <p>08/2023 - Present</p>
                   <p>Tashkent/Samarkand, Uzbekistan</p>
                 </div>
               </div>
