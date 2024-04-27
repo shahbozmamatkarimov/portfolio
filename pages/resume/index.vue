@@ -16,7 +16,9 @@
         <img class="w-7 min-w-[28px]" src="@/assets/resume/email.svg" alt="" />
         <div>
           <p class="font-[900]">Email</p>
-          <p class="break-words w-[90%] lg:whitespace-nowrap">shahbozmamatkarimov2303@gmail.com</p>
+          <p class="break-words w-[90%] lg:whitespace-nowrap">
+            shahbozmamatkarimov2303@gmail.com
+          </p>
         </div>
       </div>
       <div class="flex items-center gap-5">
@@ -187,14 +189,39 @@
           </div>
         </li>
         <li class="flex justify-between mb-10 ml-5">
+          <div
+            class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"
+          ></div>
           <div>
-            <div
-              class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"
-            ></div>
             <h1 class="flex items-center gap-2 mb-4">
               Live Website & Application Projects
             </h1>
             <div class="space-y-5">
+              <div class="flex gap-2">
+                <a
+                  class="min-w-fit max-w-[20px] pt-2"
+                  href="https://demo.founders.uz"
+                  target="_blank"
+                >
+                  <img
+                    class="h-10 w-10 rounded-md"
+                    src="@/assets/resume/logos/skool.svg"
+                    alt=""
+                  />
+                </a>
+                <div>
+                  <h1 class="font-semibold">Skool (Web)</h1>
+                  <a
+                    class="text-blue-700 text-sm"
+                    href="https://demo.founders.uz"
+                    target="_blank"
+                    >https://demo.founders.uz/</a
+                  >
+                  <p class="text-white/50 mt-2">
+                    I work as a frontend developer
+                  </p>
+                </div>
+              </div>
               <div class="flex gap-2">
                 <a
                   class="min-w-fit max-w-[20px] pt-2"
@@ -316,7 +343,8 @@ useSeoMeta({
   title: "Shahboz Mamatkarimov - resume",
   ogTitle: "Shahboz Mamatkarimov",
   description: "I am a full stack web developer",
-  keywords: "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
+  keywords:
+    "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
   ogDescription: "I am a full stack web developer",
   ogImage: "/logo.svg",
   twitterCard: "/logo.svg",
