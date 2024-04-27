@@ -179,6 +179,91 @@
         <div
           class="gap-5 flex justify-center flex-wrap md:space-y-0 space-y-5 max-md:flex-col max-md:items-stretch max-md:gap-0"
         >
+        <div
+            data-aos="fade-up"
+            class="flex flex-col bg-[#363636] md:rounded-[20px] rounded-lg items-stretch xl:w-[33%] w-[45%] max-md:w-full max-md:ml-0"
+          >
+            <div
+              class="flex md:rounded-t-[20px] rounded-t-lg overflow-hidden grow flex-col"
+            >
+              <a href="https://demo.founders.uz" target="_blank">
+                <div
+                  class="lg:h-[400px] md:h-[320px] h-[400px] bg-white overflow-hidden"
+                >
+                  <div class="animate_scroll">
+                    <img
+                      class="w-full object-cover"
+                      src="@/assets/images/Skool/Community.png"
+                      alt=""
+                    />
+                    <img
+                      class="w-full object-cover"
+                      src="@/assets/images/Skool/Course.png"
+                      alt=""
+                    />
+                    <img
+                      class="w-full object-cover"
+                      src="@/assets/images/Skool/Classroom.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="p-6 pt-0">
+                <div
+                  data-aos="fade-right"
+                  class="text-stone-300 text-3xl font-medium leading-7 whitespace-nowrap mt-7"
+                >
+                  Skool.uz
+                </div>
+                <div
+                  data-aos="fade-right"
+                  class="text-stone-300 text-lg font-light leading-7 mt-4"
+                >
+                  <h1>Online course website</h1>
+                  I work as a frontend developer
+                </div>
+                <div
+                  data-aos="fade-right"
+                  class="flex flex-wrap gap-2 justify-center text-stone-300 text-xs font-light self-center whitespace-nowrap mt-7"
+                >
+                  <button class="px-3 pb-[1px] border rounded-xl">HTML</button>
+                  <button class="px-3 pb-[1px] border rounded-xl">SASS</button>
+                  <button class="px-3 pb-[1px] border rounded-xl">
+                    TAILWIND
+                  </button>
+                  <button class="px-3 pb-[1px] border rounded-xl">
+                    JavaScript
+                  </button>
+                  <button class="px-3 pb-[1px] border rounded-xl">
+                    NuxtJS
+                  </button>
+                </div>
+                <div
+                  class="self-center flex items-stretch justify-center gap-5 mt-7"
+                >
+                  <div data-aos="fade-right">
+                    <a
+                      href="https://demo.founders.uz"
+                      target="_blank"
+                      class="flex items-stretch justify-between gap-2.5"
+                    >
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/83a72e1e636993dd72fed81c9e4d52468bf97c8ac0d45219f8fbe21cd6d66ad8?"
+                        class="aspect-square object-contain object-center w-5 overflow-hidden shrink-0 max-w-full"
+                      />
+                      <div
+                        class="text-white text-base leading-7 underline self-center grow whitespace-nowrap my-auto"
+                      >
+                        Live Preview
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div
             data-aos="fade-up"
             class="flex flex-col bg-[#363636] md:rounded-[20px] rounded-lg items-stretch xl:w-[33%] w-[45%] max-md:w-full max-md:ml-0"
