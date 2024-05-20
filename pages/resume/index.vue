@@ -55,6 +55,24 @@
               class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"
             ></div>
             <h1 class="flex items-center gap-2 mb-4">
+              <img src="@/assets/resume/skills.svg" alt="" />Learning
+            </h1>
+            <div class="sm:block flex flex-wrap gap-5">
+              <p
+                v-for="i in data.learning"
+                class="mb-1 leading-5 font-medium text-gray-100"
+              >
+                {{ i }}
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="flex justify-between mb-10 ml-5">
+          <div>
+            <div
+              class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"
+            ></div>
+            <h1 class="flex items-center gap-2 mb-4">
               <img src="@/assets/resume/lang.svg" alt="" />Languages
             </h1>
             <p
@@ -78,31 +96,6 @@
                 class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
               >
                 Web development
-              </p>
-              <p
-                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
-              >
-                Landing page
-              </p>
-              <p
-                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
-              >
-                E-commerce projects
-              </p>
-              <p
-                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
-              >
-                Admin panel
-              </p>
-              <p
-                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
-              >
-                REST API
-              </p>
-              <p
-                class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
-              >
-                Telegram bot
               </p>
               <p
                 class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100"
@@ -134,6 +127,60 @@
               code and my commitment to staying abreast of emerging trends in
               web development make me a valuable asset to any project.
             </p>
+          </div>
+        </li>
+        <li class="flex justify-between mb-10 ml-5">
+          <div class="w-full">
+            <div
+              class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"
+            ></div>
+            <h1 class="uppercase font-bold mb-4">Education</h1>
+            <div class="space-y-5">
+              <div class="flex items-center gap-2 w-full">
+                <a
+                  href="https://www.linkedin.com/company/najottalim"
+                  target="_blank"
+                >
+                  <img
+                    class="h-10 w-10 rounded-md"
+                    src="@/assets/resume/najottalim.jfif"
+                    alt=""
+                  />
+                </a>
+                <div class="flex justify-between w-full">
+                  <div>
+                    <h1>Foundation</h1>
+                    <p>Najot ta’lim</p>
+                  </div>
+                  <div class="text-end">
+                    <p>02/2022 - 05/2022</p>
+                    <p>Tashkent, Uzbekistan</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 w-full">
+                <a
+                  href="https://www.linkedin.com/company/najottalim"
+                  target="_blank"
+                >
+                  <img
+                    class="h-10 w-10 rounded-md"
+                    src="@/assets/resume/najottalim.jfif"
+                    alt=""
+                  />
+                </a>
+                <div class="flex justify-between w-full">
+                  <div>
+                    <h1>Full stack NodeJS/VueJS bootcamp</h1>
+                    <p>Najot ta’lim</p>
+                  </div>
+                  <div class="text-end">
+                    <p>05/2022 - 07/2023</p>
+                    <p>Tashkent, Uzbekistan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </li>
         <li class="flex justify-between mb-10 ml-5">
@@ -368,6 +415,7 @@ const data = ref({
     "PostgreSQL",
     "MongoDB",
   ],
+  learning: ["Flutter", "ThreeJS"],
   languages: ["Uzbek", "English"],
 });
 
