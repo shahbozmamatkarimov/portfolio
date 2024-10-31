@@ -186,7 +186,7 @@
             <div
               class="flex md:rounded-t-[20px] rounded-t-lg overflow-hidden grow flex-col"
             >
-              <a href="https://demo.founders.uz" target="_blank">
+              <a href="https://learnify.uz" target="_blank">
                 <div
                   class="lg:h-[400px] md:h-[320px] h-[400px] bg-white overflow-hidden"
                 >
@@ -244,7 +244,7 @@
                 >
                   <div data-aos="fade-right">
                     <a
-                      href="https://demo.founders.uz"
+                      href="https://learnify.uz"
                       target="_blank"
                       class="flex items-stretch justify-between gap-2.5"
                     >
