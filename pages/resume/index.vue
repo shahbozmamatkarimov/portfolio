@@ -247,7 +247,7 @@
               <div class="flex gap-2">
                 <a
                   class="min-w-fit max-w-[20px] pt-2"
-                  href="https://demo.founders.uz"
+                  href="https://learnify.uz"
                   target="_blank"
                 >
                   <img
@@ -260,9 +260,9 @@
                   <h1 class="font-semibold">Skool (Web)</h1>
                   <a
                     class="text-blue-700 text-sm"
-                    href="https://demo.founders.uz"
+                    href="https://learnify.uz"
                     target="_blank"
-                    >https://demo.founders.uz/</a
+                    >https://learnify.uz</a
                   >
                   <p class="text-white/50 mt-2">
                     I work as a frontend developer
