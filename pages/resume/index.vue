@@ -228,8 +228,30 @@
                   <p>Frontend Developer</p>
                 </div>
                 <div class="text-end">
-                  <p>08/2023 - Present</p>
+                  <p>08/2023 - 01/2025</p>
                   <p>Tashkent/Samarkand, Uzbekistan</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 w-full">
+              <a
+                href="https://www.linkedin.com/company/uniplatforms"
+                target="_blank"
+              >
+                <img
+                  class="h-10 w-10 rounded-md"
+                  src="@/assets/resume/noimage.gif"
+                  alt=""
+                />
+              </a>
+              <div class="flex justify-between w-full">
+                <div>
+                  <h1>Uniplatforms</h1>
+                  <p>Frontend Developer</p>
+                </div>
+                <div class="text-end">
+                  <p>01/2025 - Present</p>
+                  <p>Tashkent, Uzbekistan</p>
                 </div>
               </div>
             </div>
