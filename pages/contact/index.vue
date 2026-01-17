@@ -16,7 +16,7 @@
         class="text-center text-white shadow-2xl shadow-white rounded-lg border bg-black min-w-fit w-72 z-10 px-5 py-7"
       >
         <a
-          href="tel:+998991422303"
+          href="tel:+998931144063"
           class="text-[#FFF] border-2 border-[#FFF] rounded-full text-2xl hover:bg-[#FFF] hover:text-black duration-700 px-3 py-2"
         >
           <i class="bx bxs-phone-call"></i>
@@ -122,7 +122,7 @@ const sendMessage = reactive({
 });
 
 store.location = "Uzbekistan, Samarkand";
-store.phone = "+998 99 142 23 03";
+store.phone = "+998 93 114 40 63";
 store.email = "shahbozmamatkarimov2303@gmail.com";
 
 function handleSubmit() {

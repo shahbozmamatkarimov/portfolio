@@ -11,7 +11,7 @@
         <div
           class="text-neutral-400 text-lg leading-7 whitespace-nowrap text-center w-full"
         >
-          <a href="tel:+998991422303">+998 991422303</a>
+          <a href="tel:+998931144063">+998 931144063</a>
         </div>
         <div class="text-neutral-400 text-lg leading-7">
           <a href="mailto:shahbozmamatkarimov2303@gmail.com"
@@ -45,7 +45,7 @@
       <div
         class="text-neutral-400 text-lg leading-7 whitespace-nowrap text-center w-full"
       >
-        <a href="tel:+998991422303">+998 991422303</a>
+        <a href="tel:+998931144063">+998 931144063</a>
       </div>
       <div class="text-neutral-400 text-lg leading-7">
         <a href="mailto:shahbozmamatkarimov2303@gmail.com"

@@ -9,7 +9,7 @@
         <img class="w-7" src="@/assets/resume/phone.svg" alt="" />
         <div>
           <p class="font-[900]">Phone</p>
-          <p>+998 991422303</p>
+          <p>+998 931144063</p>
         </div>
       </div>
       <div class="flex items-center gap-5">
