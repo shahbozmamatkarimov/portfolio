@@ -9,11 +9,11 @@
         class="self-center sm:flex hidden lg:flex-row flex-col lg:justify-between justify-center gap-5 my-auto items-start"
       >
         <div
-          class="text-neutral-400 text-lg leading-7 whitespace-nowrap text-center w-full"
+          class="text-neutral-400 hover:text-[#FD6F00] text-lg leading-7 whitespace-nowrap text-center w-full"
         >
           <a href="tel:+998931144063">+998 931144063</a>
         </div>
-        <div class="text-neutral-400 text-lg leading-7">
+        <div class="text-neutral-400 hover:text-[#FD6F00] text-lg leading-7">
           <a href="mailto:shahbozmamatkarimov2303@gmail.com"
             >shahbozmamatkarimov2303@gmail.com</a
           >
@@ -43,11 +43,11 @@
       class="self-center sm:hidden flex mt-5 lg:flex-row flex-col lg:justify-between justify-center gap-5 my-auto items-start"
     >
       <div
-        class="text-neutral-400 text-lg leading-7 whitespace-nowrap text-center w-full"
+        class="text-neutral-400 hover:text-[#FD6F00] text-lg leading-7 whitespace-nowrap text-center w-full"
       >
         <a href="tel:+998931144063">+998 931144063</a>
       </div>
-      <div class="text-neutral-400 text-lg leading-7">
+      <div class="text-neutral-400 hover:text-[#FD6F00] text-lg leading-7">
         <a href="mailto:shahbozmamatkarimov2303@gmail.com"
           >shahbozmamatkarimov2303@gmail.com</a
         >
@@ -66,32 +66,32 @@
       >
         <router-link
           to="/#home"
-          class="text-neutral-400 text-center font-medium leading-7"
+          class="hover:text-[#FD6F00] text-neutral-400 text-center font-medium leading-7"
         >
           Home
         </router-link>
         <router-link
           to="/#technologies"
-          class="text-neutral-400 text-center font-medium leading-7"
+          class="hover:text-[#FD6F00] text-neutral-400 text-center font-medium leading-7"
         >
           Tech Stack
         </router-link>
         <router-link
           to="/#projects"
-          class="text-neutral-400 text-center font-medium leading-7"
+          class="hover:text-[#FD6F00] text-neutral-400 text-center font-medium leading-7"
         >
           Projects
         </router-link>
         <router-link
           to="/resume"
-          class="text-neutral-400 text-center font-medium leading-7"
+          class="hover:text-[#FD6F00] text-neutral-400 text-center font-medium leading-7"
         >
           Resume
         </router-link>
         <div>
           <router-link
             to="/contact"
-            class="text-neutral-400 text-center font-medium leading-7"
+            class="hover:text-[#FD6F00] text-neutral-400 text-center font-medium leading-7"
           >
             Contact
           </router-link>

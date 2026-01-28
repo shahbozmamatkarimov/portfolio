@@ -5,30 +5,26 @@
         <div class="gap-5 md:flex">
           <div class="flex flex-col xl:mt-0 -mt-16 md:w-[67%] bg-[url('')] bg-cover">
             <div data-aos="fade-up" class="text-zinc-300 font-bold bg-clip-text w-full my-auto">
-              <div class="text-zinc-300">
-                <p class="text-2xl w-full">Assalamu alaikum 👋,</p>
-                <p class="md:text-5xl text-3xl">My name is</p>
+              <div class="text-[#707070]">
+                <p class="text-2xl w-full">Assalamu alaykum 👋,</p>
+                <p class="md:text-5xl text-3xl">I am </p>
               </div>
-              <p class="text-3xl mt-1">Shahboz Mamatkarimov</p>
-              <p class="text-zinc-300 mt-5 text-4xl max-w-fit cursor typewriter-animation">I am a Full stack web developer</p>
-              <!-- <p class="text-4xl">I can build any website of your dreams</p> -->
-              <button @click="$router.push('/resume')"
-                class="text-white bg-black rounded-full px-10 py-2 shadow-inner shadow-gray-600 mt-6">
-                My Resume
-              </button>
+              <p class="text-3xl mt-1 text-[#959595]">Shahboz Mamatkarimov</p>
+              <p class="c_main mt-5 !text-7xl max-w-fit cursor typewriter-animation">Full stack web developer</p>
+              <div class="mt-6 flex gap-6">
+                <router-link to="/contact">
+                  <button class="text-white bg_main rounded-lg px-12 py-3 pt-4">
+                    Contact Me
+                  </button>
+                </router-link>
+                <router-link to="/resume">
+                  <button class="rounded-lg px-12 py-3 pt-4 border border-[#959595] text-[#959595]">
+                    Resume
+                  </button>
+                </router-link>
+              </div>
             </div>
           </div>
-          <!-- <div
-            @click="$router.push('/resume')"
-            data-aos="fade-left"
-            class="flex flex-col items-stretch xl:w-[50%] md:w-[50%] h-full md:mt-0 mt-5"
-          >
-            <img
-              loading="lazy"
-              src="@/assets/resume/code.png"
-              class="w-full object-cover overflow-hidden"
-            />
-          </div> -->
         </div>
       </div>
       <div id="technologies" data-aos="fade-right"
@@ -36,7 +32,7 @@
         My Tech Stack
       </div>
       <div data-aos="fade-up"
-        class="text-neutral-400 text-center lg:text-3xl sm:text-2xl text-xl leading-7 self-center mt-8 max-md:max-w-full">
+        class="text-[#707070] font-medium text-center lg:text-3xl sm:text-2xl text-xl leading-7 self-center mt-8 max-md:max-w-full">
         Technologies I’ve been working with recently
       </div>
       <div class="flex flex-wrap items-start justify-center gap-5 md:mt-32 mt-16 pr-2.5 space-y-5">
@@ -80,7 +76,7 @@
         Projects
       </div>
       <div data-aos="fade-right"
-        class="text-neutral-400 text-center lg:text-3xl sm:text-2xl text-xl leading-7 self-center mt-8">
+        class="text-[#707070] text-center lg:text-3xl sm:text-2xl text-xl leading-7 self-center mt-8">
         Things I’ve built so far
       </div>
       <div class="self-stretch mt-24 max-md:max-w-full">
@@ -102,23 +98,8 @@
                 <div data-aos="fade-right" class="text-stone-300 text-3xl font-medium leading-7 whitespace-nowrap mt-7">
                   Skool.uz
                 </div>
-                <div data-aos="fade-right" class="text-stone-300 text-lg font-light leading-7 mt-4">
-                  <h1>Online course website</h1>
-                  I work as a frontend developer
-                </div>
-                <div data-aos="fade-right"
-                  class="flex flex-wrap gap-2 justify-center text-stone-300 text-xs font-light self-center whitespace-nowrap mt-7">
-                  <button class="px-3 pb-[1px] border rounded-xl">HTML</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">SASS</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    TAILWIND
-                  </button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    JavaScript
-                  </button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    NuxtJS
-                  </button>
+                <div data-aos="fade-right" class="text-lg font-light leading-7 mt-4 text-[#959595]">
+                  <h1 class="c_main">Online course website</h1>
                 </div>
                 <div class="self-center flex items-stretch justify-center gap-5 mt-7">
                   <div data-aos="fade-right">
@@ -149,23 +130,8 @@
                 <div data-aos="fade-right" class="text-stone-300 text-3xl font-medium leading-7 whitespace-nowrap mt-7">
                   Florify.uz
                 </div>
-                <div data-aos="fade-right" class="text-stone-300 text-lg font-light leading-7 mt-4">
-                  <h1>Flowers website</h1>
-                  I work as a frontend developer
-                </div>
-                <div data-aos="fade-right"
-                  class="flex flex-wrap gap-2 justify-center text-stone-300 text-xs font-light self-center whitespace-nowrap mt-7">
-                  <button class="px-3 pb-[1px] border rounded-xl">HTML</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">SASS</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    TAILWIND
-                  </button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    JavaScript
-                  </button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    NuxtJS
-                  </button>
+                <div data-aos="fade-right" class="text-lg font-light leading-7 mt-4 text-[#959595]">
+                  <h1 class="c_main">Flowers website</h1>
                 </div>
                 <div class="self-center flex items-stretch justify-center gap-5 mt-7">
                   <div data-aos="fade-right">
@@ -202,23 +168,8 @@
                 <div data-aos="fade-right" class="text-stone-300 text-3xl font-medium leading-7 whitespace-nowrap mt-7">
                   Dev-dla.newtribe.nl
                 </div>
-                <div data-aos="fade-right" class="text-stone-300 text-lg font-light leading-7 mt-4">
-                  <h1>Digital Legal Assistant</h1>
-                  I work as a frontend developer
-                </div>
-                <div data-aos="fade-right"
-                  class="flex flex-wrap gap-2 justify-center text-stone-300 text-xs font-light self-center whitespace-nowrap mt-7">
-                  <button class="px-3 pb-[1px] border rounded-xl">HTML</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">SASS</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    TAILWIND
-                  </button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    JavaScript
-                  </button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    NuxtJS
-                  </button>
+                <div data-aos="fade-right" class="text-lg font-light leading-7 mt-4 text-[#959595]">
+                  <h1 class="c_main">Digital Legal Assistant</h1>
                 </div>
                 <div class="self-center flex items-stretch justify-center gap-5 mt-7">
                   <div data-aos="fade-right">
@@ -254,21 +205,8 @@
                 <div data-aos="fade-right" class="text-stone-300 text-3xl font-medium leading-7 whitespace-nowrap mt-7">
                   Dev-ecommsnkr.newtribe.nl
                 </div>
-                <div data-aos="fade-right" class="text-stone-300 text-lg font-light leading-7 mt-4">
-                  <h1>Sneackers website</h1>
-                  We worked as a team, and the frontend developers are two
-                  people
-                </div>
-                <div data-aos="fade-right"
-                  class="flex flex-wrap gap-2 justify-center text-stone-300 text-xs font-light self-center whitespace-nowrap mt-7">
-                  <button class="px-3 pb-[1px] border rounded-xl">HTML</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">SASS</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    JavaScript
-                  </button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    NuxtJS
-                  </button>
+                <div data-aos="fade-right" class="text-lg font-light leading-7 mt-4 text-[#959595]">
+                  <h1 class="c_main">Sneackers website</h1>
                 </div>
                 <div class="self-center flex items-stretch justify-center gap-5 mt-7">
                   <div data-aos="fade-right">
@@ -300,19 +238,8 @@
                 <div data-aos="fade-right" class="text-stone-300 text-3xl font-medium leading-7 whitespace-nowrap mt-7">
                   MedBozor.uz
                 </div>
-                <div data-aos="fade-right" class="text-stone-300 text-lg font-light leading-7 mt-4">
-                  <h1>Med website</h1>
-                  We worked as a team, and the frontend developers are two
-                  people
-                </div>
-                <div data-aos="fade-right"
-                  class="flex flex-wrap gap-2 justify-center text-stone-300 text-xs font-light self-center whitespace-nowrap mt-7">
-                  <button class="px-3 pb-[1px] border rounded-xl">HTML</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">SASS</button>
-                  <button class="px-3 pb-[1px] border rounded-xl">
-                    JavaScript
-                  </button>
-                  <button class="px-3 pb-[1px] border rounded-xl">VueJS</button>
+                <div data-aos="fade-right" class="text-lg font-light leading-7 mt-4 text-[#959595]">
+                  <h1 class="c_main">Med website</h1>
                 </div>
                 <div class="self-center flex items-stretch justify-center gap-5 mt-7">
                   <div data-aos="fade-right">

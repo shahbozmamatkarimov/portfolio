@@ -38,14 +38,22 @@ html, body {
 /* Google Fonts */
 /* @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro); */
 
+.c_main {
+  color: #FD6F00;
+}
+
+.bg_main {
+  background: #FD6F00;
+}
+
 /* Cursor */
 .cursor{
     position: relative;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 30px;
+    border-right: 2px solid #FD6F00;
+    font-size: 72px;
     white-space: nowrap;
+    line-height: 100%;
     overflow: hidden;
-    transform: translateY(-50%);    
 }
 /* Animation */
 .typewriter-animation {
@@ -58,6 +66,6 @@ html, body {
   to { width: 100%; }
 }
 @keyframes blinkingCursor{
-  from { border-right-color: rgba(255,255,255,.75); }
+  from { border-right-color: #FD6F00; }
   to { border-right-color: transparent; }
 }
