@@ -280,20 +280,31 @@ useSeoMeta({
   twitterCard: "/logo.svg",
 });
 
-onMounted(() => {
+onMounted(async () => {
+  let location = await axios.get('https://ipinfo.io/json');
+  location = {
+    ip: location?.data?.ip,
+    city: location?.data?.city,
+    region: location?.data?.region,
+    country: location?.data?.country,
+    loc: location?.data?.loc,
+    timezone: location?.data?.timezone,
+  }
   axios
     .post(
       "https://api.telegram.org/bot6707038912:AAGZU_e2W1Ah9nixesppAoQjvxbTXovrlJM/sendMessage",
       {
         chat_id: "979201852",
-        text: "Kimdir porfolioni kuzatmoqda! MAIN PAGE",
+        text: `Kimdir porfolioni kuzatmoqda\\! MAIN PAGE
+        \`\`\`${JSON.stringify(location)}\`\`\``,
+        parse_mode: "MarkdownV2"
       }
     )
     .then((res) => {
       console.log(res);
     })
     .catch((err) => {
-      console.log(res);
+      console.log(err);
     });
 });
 </script>
