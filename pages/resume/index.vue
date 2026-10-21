@@ -41,7 +41,7 @@
                 <h3 class="font-semibold text-zinc-100">{{ j.role }}</h3>
                 <p class="text-zinc-400">{{ j.company }}</p>
               </div>
-              <div class="text-sm text-zinc-500 sm:text-right">
+              <div class="text-sm text-zinc-400 sm:text-right">
                 <p>{{ j.period }}</p>
                 <p>{{ j.location }}</p>
               </div>
@@ -60,7 +60,7 @@
         <div v-for="p in projects" :key="p.url">
           <h3 class="font-semibold text-zinc-100">{{ p.name }}</h3>
           <a :href="p.url" target="_blank" rel="noopener" class="text-sm text-[#22c55e] hover:underline">{{ p.url }}</a>
-          <p class="mt-1 text-zinc-500">{{ p.text }}</p>
+          <p class="mt-1 text-zinc-400">{{ p.text }}</p>
         </div>
       </div>
     </section>
@@ -83,7 +83,7 @@
           <div v-for="e in education" :key="e.title">
             <h3 class="font-semibold text-zinc-100">{{ e.title }}</h3>
             <p class="text-zinc-400">Najot Ta'lim &middot; Tashkent, Uzbekistan</p>
-            <p class="text-sm text-zinc-500">{{ e.period }}</p>
+            <p class="text-sm text-zinc-400">{{ e.period }}</p>
           </div>
         </div>
         <h2 class="block-title mt-6">Languages</h2>
@@ -96,22 +96,22 @@
 </template>
 
 <script setup>
-import axios from "axios";
 
-useHead({
-  title: "Shahboz Mamatkarimov - resume",
-  meta: [{ name: "description", content: "Full Stack Web Developer" }],
-});
 useSeoMeta({
-  title: "Shahboz Mamatkarimov - resume",
-  ogTitle: "Shahboz Mamatkarimov",
-  description: "I am a full stack web developer",
-  keywords:
-    "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
-  ogDescription: "I am a full stack web developer",
-  ogImage: "/logo.svg",
-  twitterCard: "/logo.svg",
+  title: "Shahboz Mamatkarimov — Resume",
+  ogTitle: "Shahboz Mamatkarimov — Resume",
+  description: "Resume of Shahboz Mamatkarimov, Software Engineer: experience, projects, technical skills and education. Download the PDF.",
+  ogDescription: "Resume of Shahboz Mamatkarimov, Software Engineer: experience, projects, technical skills and education. Download the PDF.",
+  keywords: "shahboz mamatkarimov, software engineer, frontend developer, full stack developer, vue, nuxt, react, nodejs, flutter, tashkent, uzbekistan",
+  ogUrl: "https://shahbozmamatkarimov.vercel.app/resume",
+  ogImage: "https://shahbozmamatkarimov.vercel.app/og-image.png",
+  ogImageAlt: "Shahboz Mamatkarimov — Software Engineer",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Shahboz Mamatkarimov — Resume",
+  twitterDescription: "Resume of Shahboz Mamatkarimov, Software Engineer: experience, projects, technical skills and education. Download the PDF.",
+  twitterImage: "https://shahbozmamatkarimov.vercel.app/og-image.png",
 });
+useHead({ link: [{ rel: "canonical", href: "https://shahbozmamatkarimov.vercel.app/resume" }] });
 
 import hocaLogo from "@/assets/resume/hoca.svg";
 import programmerLogo from "@/assets/resume/programmeruz.svg";
@@ -165,24 +165,7 @@ const skills = [
 const languages = ["Uzbek (Native)", "English (Intermediate)"];
 
 onMounted(async () => {
-  let location = await axios.get('https://ipinfo.io/json');
-  location = {
-    ip: location?.data?.ip,
-    city: location?.data?.city,
-    region: location?.data?.region,
-    country: location?.data?.country,
-    loc: location?.data?.loc,
-    timezone: location?.data?.timezone,
-  }
-
-  $fetch("/api/notify", { method: "POST", body: { markdown: true, silent: true, text: `Kimdir porfolioni kuzatmoqda\\! RESUME PAGE
-         \`\`\`${JSON.stringify(location)}\`\`\`` } })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  visitPing("RESUME PAGE");
 });
 </script>
 

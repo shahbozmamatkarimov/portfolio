@@ -39,11 +39,11 @@
           <a :href="'mailto:' + store.email" class="underline">{{ store.email }}</a>.
         </p>
         <button v-if="store.sending == 1" type="submit"
-          class="w-full rounded-xl bg-[#22c55e] px-5 py-3 font-semibold text-white hover:bg-[#4ade80] transition">
+          class="w-full rounded-xl bg-[#22c55e] px-5 py-3 font-semibold text-[#04210f] hover:bg-[#4ade80] transition">
           Send message
         </button>
         <button v-else-if="store.sending == 3" type="button"
-          class="w-full rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white">
+          class="w-full rounded-xl bg-emerald-800 px-5 py-3 font-semibold text-white">
           <i class="bx bx-check"></i> Thank you! I'll get back to you soon.
         </button>
         <button v-else type="button" disabled
@@ -56,22 +56,22 @@
 </template>
 
 <script setup>
-useHead({
-  title: "Shahboz Mamatkarimov - contact",
-  meta: [{ name: "description", content: "Full stack web developer" }],
-});
 useSeoMeta({
-  title: "Shahboz Mamatkarimov - contact",
-  ogTitle: "Shahboz Mamatkarimov",
-  description: "I am a full stack web developer",
-  keywords:
-    "shahboz, mamatkarimov, frontenf, backend, fullstack, front-end, back-end, full-stack",
-  ogDescription: "I am a full stack web developer",
-  ogImage: "/logo.svg",
-  twitterCard: "/logo.svg",
+  title: "Contact Shahboz Mamatkarimov — Software Engineer",
+  ogTitle: "Contact Shahboz Mamatkarimov — Software Engineer",
+  description: "Hiring or have a project in mind? Contact Shahboz Mamatkarimov, Software Engineer based in Tashkent, Uzbekistan.",
+  ogDescription: "Hiring or have a project in mind? Contact Shahboz Mamatkarimov, Software Engineer based in Tashkent, Uzbekistan.",
+  keywords: "shahboz mamatkarimov, software engineer, frontend developer, full stack developer, vue, nuxt, react, nodejs, flutter, tashkent, uzbekistan",
+  ogUrl: "https://shahbozmamatkarimov.vercel.app/contact",
+  ogImage: "https://shahbozmamatkarimov.vercel.app/og-image.png",
+  ogImageAlt: "Shahboz Mamatkarimov — Software Engineer",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Contact Shahboz Mamatkarimov — Software Engineer",
+  twitterDescription: "Hiring or have a project in mind? Contact Shahboz Mamatkarimov, Software Engineer based in Tashkent, Uzbekistan.",
+  twitterImage: "https://shahbozmamatkarimov.vercel.app/og-image.png",
 });
+useHead({ link: [{ rel: "canonical", href: "https://shahbozmamatkarimov.vercel.app/contact" }] });
 
-import axios from "axios";
 
 const store = reactive({
   location: "",
@@ -128,24 +128,7 @@ message: ${sendMessage.message}
 }
 
 onMounted(async () => {
-  let location = await axios.get('https://ipinfo.io/json');
-  location = {
-    ip: location?.data?.ip,
-    city: location?.data?.city,
-    region: location?.data?.region,
-    country: location?.data?.country,
-    loc: location?.data?.loc,
-    timezone: location?.data?.timezone,
-  }
-
-  $fetch("/api/notify", { method: "POST", body: { markdown: true, silent: true, text: `Kimdir porfolioni kuzatmoqda\\! CONTACT PAGE
-        \`\`\`${JSON.stringify(location)}\`\`\`` } })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  visitPing("CONTACT PAGE");
 });
 </script>
 

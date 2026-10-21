@@ -6,34 +6,34 @@
         <span class="h-2 w-2 animate-pulse rounded-full bg-white"></span> Hire a Software Engineer
       </a>
     </Transition>
-    <div class="relative max-w-[1200px] mx-auto md:px-10 px-5">
+    <main class="relative max-w-[1200px] mx-auto md:px-10 px-5">
       <!-- HERO -->
       <section id="home" class="grid min-h-[min(80vh,720px)] [&>*]:min-w-0 items-center gap-12 py-16 lg:grid-cols-[1.1fr_.9fr]">
         <div>
-          <div data-aos="fade-up" class="badge">
+          <div data-aos="fade-up" data-aos-duration="500" class="badge">
             <span class="relative flex h-2 w-2">
               <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
             </span>
             Available for new opportunities
           </div>
-          <p data-aos="fade-up" data-aos-delay="80" class="mt-8 text-lg text-zinc-400">
+          <p data-aos="fade-up" data-aos-duration="500" class="mt-8 text-lg text-zinc-400">
             Assalamu alaykum 👋 I'm
           </p>
-          <h1 data-aos="fade-up" data-aos-delay="140" class="hero-name">Shahboz Mamatkarimov</h1>
-          <p data-aos="fade-up" data-aos-delay="200" class="hero-role">
+          <h1 data-aos="fade-up" data-aos-duration="500" class="hero-name">Shahboz Mamatkarimov</h1>
+          <p data-aos="fade-up" data-aos-duration="500" class="hero-role">
             <span class="gradient-text">Software Engineer</span>
           </p>
-          <ul data-aos="fade-up" data-aos-delay="240" class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-zinc-300">
+          <ul data-aos="fade-up" data-aos-duration="500" class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-zinc-300">
             <li v-for="f in facts" :key="f" class="flex items-center gap-2"><i class="bx bxs-check-circle text-lg text-emerald-400"></i>{{ f }}</li>
           </ul>
-          <div data-aos="fade-up" data-aos-delay="320" class="mt-9 flex flex-wrap items-center gap-4">
+          <div data-aos="fade-up" data-aos-duration="500" class="mt-9 flex flex-wrap items-center gap-4">
             <a href="mailto:shahbozmamatkarimov2303@gmail.com?subject=Software%20Engineer%20opportunity" class="btn-primary"><i class="bx bx-envelope"></i> Email me</a>
             <a href="/Shahboz-Mamatkarimov-Resume.pdf" download="Shahboz-Mamatkarimov-Resume.pdf" class="btn-ghost"><i class="bx bx-download"></i> Download CV</a>
             <a href="https://www.linkedin.com/in/shahboz-mamatkarimov-12ba00267" target="_blank" rel="noopener" class="btn-ghost"><i class="bx bxl-linkedin"></i> LinkedIn</a>
           </div>
-          <p data-aos="fade-up" data-aos-delay="360" class="mt-4 text-sm text-zinc-500">Usually replies within a day &middot; Tashkent, Uzbekistan (UTC+5)</p>
-          <p data-aos="fade-up" data-aos-delay="280" class="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400">
+          <p data-aos="fade-up" data-aos-duration="500" class="mt-4 text-sm text-zinc-400">Usually replies within a day &middot; Tashkent, Uzbekistan (UTC+5)</p>
+          <p data-aos="fade-up" data-aos-duration="500" class="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400">
             I build fast, scalable products end to end &mdash; polished Vue/Nuxt &amp; React interfaces on top of
             Node.js/NestJS APIs. <b class="text-zinc-200">{{ years }}+ years</b> shipping apps used by real customers.
           </p>
@@ -41,7 +41,7 @@
         </div>
 
         <!-- code window -->
-        <div data-aos="zoom-in" data-aos-delay="200" class="relative">
+        <div data-aos="zoom-in" class="relative">
           <div class="float-badge max-lg:hidden left-[-30px] top-[62%]"><img :src="vue" alt="" /></div>
           <div class="float-badge max-lg:hidden right-[-10px] top-[-18px] delay-1"><img :src="react" alt="" /></div>
           <div class="glass tilt overflow-hidden" @mousemove="tilt" @mouseleave="untilt">
@@ -49,7 +49,7 @@
               <span class="h-3 w-3 rounded-full bg-red-500/80"></span>
               <span class="h-3 w-3 rounded-full bg-yellow-500/80"></span>
               <span class="h-3 w-3 rounded-full bg-green-500/80"></span>
-              <span class="ml-3 font-mono text-xs text-zinc-500">shahboz.ts</span>
+              <span class="ml-3 font-mono text-xs text-zinc-400">shahboz.ts</span>
             </div>
 <pre class="overflow-x-auto p-6 font-mono text-[13px] leading-8 sm:text-sm"><span class="k">const</span> <span class="v">shahboz</span> = {
   <span class="p">role</span>: <span class="s">"Software Engineer"</span>,
@@ -70,7 +70,7 @@
 
       <!-- trusted by -->
       <section data-aos="fade-up" class="py-6">
-        <p class="text-center text-xs font-semibold uppercase tracking-[0.25em] text-zinc-500">Experience with</p>
+        <p class="text-center text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">Experience with</p>
         <div class="mt-5 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
           <div v-for="c in experience" :key="c.company" class="flex items-center gap-3 text-zinc-300">
             <img v-if="c.logo" :src="c.logo" alt="" class="h-8 w-8 rounded-md bg-white object-contain p-1" />
@@ -128,12 +128,13 @@
         <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-6">
           <article v-for="(p, idx) in projects" v-show="filter === 'All' || p.cat === filter" :key="p.name" data-aos="fade-up"
             class="glass spot group flex flex-col overflow-hidden" :class="spanOf(idx)" @mousemove="spot">
-            <div class="relative block h-[300px] cursor-zoom-in overflow-hidden bg-white xl:h-[340px]" @click="openGallery(idx)">
-              <img v-if="p.fit" :src="p.images[0]" alt="" loading="lazy" class="h-full w-full object-cover object-left-top" />
+            <div class="relative block h-[300px] cursor-zoom-in overflow-hidden bg-white xl:h-[340px]" role="button" tabindex="0"
+              :aria-label="'Open ' + p.name + ' gallery'" @click="openGallery(idx)" @keydown.enter.prevent="openGallery(idx)" @keydown.space.prevent="openGallery(idx)">
+              <img v-if="p.fit" :src="p.images[0]" :alt="p.name + ' screenshot'" loading="lazy" decoding="async" width="1400" height="1000" class="h-full w-full object-cover object-left-top" />
               <div v-else class="animate_scroll" :class="p.pad">
-                <img v-for="(img, i) in p.images" :key="i" :src="img" alt="" loading="lazy" class="w-full object-cover" />
+                <img v-for="(img, i) in p.images" :key="i" :src="img" :alt="p.name + ' screenshot ' + (i + 1)" loading="lazy" decoding="async" class="w-full object-cover" />
               </div>
-              <span class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/60 opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
+              <span class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/60 opacity-0 backdrop-blur-sm transition group-hover:opacity-100 group-focus-within:opacity-100">
                 <span class="btn-primary">View gallery ({{ p.images.length }}) <i class="bx bx-expand-alt"></i></span>
                 <a :href="p.url" target="_blank" rel="noopener" class="text-sm text-zinc-200 underline underline-offset-4 hover:text-white" @click.stop>
                   Open live site <i class="bx bx-link-external"></i>
@@ -162,7 +163,7 @@
             <ul class="grid grid-cols-3 gap-4">
               <li v-for="t in group.items" :key="t.name" class="group flex flex-col items-center gap-2 text-center">
                 <span class="grid h-14 w-14 place-items-center rounded-xl bg-white/5 p-2.5 transition duration-300 group-hover:-translate-y-1 group-hover:bg-white/10 group-hover:shadow-[0_8px_30px_rgba(34,197,94,.25)]">
-                  <img :src="t.icon" :alt="t.name" loading="lazy" class="max-h-full max-w-full object-contain" />
+                  <img :src="t.icon" alt="" loading="lazy" class="max-h-full max-w-full object-contain" />
                 </span>
                 <span class="text-xs text-zinc-400">{{ t.name }}</span>
               </li>
@@ -208,7 +209,7 @@
                   class="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-[#22c55e]/50 hover:bg-white/[0.07]">
                   <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#22c55e]/15 text-2xl c_main"><i :class="c.icon"></i></span>
                   <span class="min-w-0">
-                    <span class="block text-xs uppercase tracking-widest text-zinc-500">{{ c.label }}</span>
+                    <span class="block text-xs uppercase tracking-widest text-zinc-400">{{ c.label }}</span>
                     <span class="block truncate font-medium text-zinc-100">{{ c.value }}</span>
                   </span>
                   <i class="bx bx-right-arrow-alt ml-auto text-2xl text-zinc-600 transition group-hover:translate-x-1 group-hover:text-[#22c55e]"></i>
@@ -223,13 +224,13 @@
           </div>
         </div>
       </section>
-    </div>
+    </main>
 
     <!-- GALLERY LIGHTBOX -->
     <ClientOnly>
       <Teleport to="body">
         <Transition name="lb">
-        <div v-if="gallery.open" class="fixed inset-0 z-[100] flex flex-col bg-black/90 backdrop-blur-md" @click.self="closeGallery">
+        <div v-if="gallery.open" role="dialog" aria-modal="true" :aria-label="current.name + ' gallery'" class="fixed inset-0 z-[100] flex flex-col bg-black/90 backdrop-blur-md" @click.self="closeGallery">
           <div class="flex items-center justify-between gap-4 px-5 py-4 text-zinc-200" @click.self="closeGallery">
             <div>
               <p class="text-lg font-semibold">{{ current.name }}</p>
@@ -237,7 +238,7 @@
             </div>
             <div class="flex items-center gap-3">
               <a :href="current.url" target="_blank" rel="noopener" class="btn-primary !py-2 text-sm">Live site <i class="bx bx-link-external"></i></a>
-              <button type="button" aria-label="Close" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-2xl hover:bg-white/20" @click="closeGallery">
+              <button ref="closeBtn" type="button" aria-label="Close gallery" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-2xl hover:bg-white/20" @click="closeGallery">
                 <i class="bx bx-x"></i>
               </button>
             </div>
@@ -256,9 +257,9 @@
           </div>
 
           <div v-if="current.images.length > 1" class="flex justify-center gap-2 overflow-x-auto px-4 py-4">
-            <button v-for="(img, i) in current.images" :key="i" type="button" class="h-16 w-24 shrink-0 overflow-hidden rounded-md border-2 transition"
+            <button v-for="(img, i) in current.images" :key="i" type="button" :aria-label="'Show image ' + (i + 1)" :aria-current="i === gallery.i" class="h-16 w-24 shrink-0 overflow-hidden rounded-md border-2 transition"
               :class="i === gallery.i ? 'border-[#22c55e]' : 'border-transparent opacity-60 hover:opacity-100'" @click="gallery.i = i">
-              <img :src="img" alt="" class="h-full w-full object-cover object-top" />
+              <img :src="img" :alt="current.name + ' thumbnail ' + (i + 1)" loading="lazy" class="h-full w-full object-cover object-top" />
             </button>
           </div>
         </div>
@@ -269,7 +270,6 @@
 </template>
 
 <script setup>
-import axios from "axios";
 
 import html from "@/assets/technologies/html.svg";
 import css from "@/assets/technologies/css.svg";
@@ -294,37 +294,51 @@ import dart from "@/assets/technologies/dart.svg";
 import hocaLogo from "@/assets/resume/hoca.svg";
 import programmerLogo from "@/assets/resume/programmeruz.svg";
 
-import skool1 from "@/assets/images/Skool/Community.png";
-import skool2 from "@/assets/images/Skool/Course.png";
-import skool3 from "@/assets/images/Skool/Classroom.png";
-import florify from "@/assets/images/Florify.png";
-import dla1 from "@/assets/images/DLA/dla.png";
-import dla2 from "@/assets/images/DLA/Team.png";
-import dla3 from "@/assets/images/DLA/client_info.png";
-import dla4 from "@/assets/images/DLA/Latest_activity.png";
-import dla5 from "@/assets/images/DLA/group_chat.png";
-import snkr1 from "@/assets/images/Sneackers/desktop.png";
-import snkr2 from "@/assets/images/Sneackers/mobile.png";
-import snkr3 from "@/assets/images/Sneackers/sneakers.png";
-import medbozor from "@/assets/images/MedBozor.png";
-import itCabinet from "@/assets/images/ITPark/cabinet.png";
-import itMyitpark from "@/assets/images/ITPark/myitpark.png";
-import itRelocation from "@/assets/images/ITPark/relocation.png";
+import skool1 from "@/assets/images/Skool/Community.webp";
+import skool2 from "@/assets/images/Skool/Course.webp";
+import skool3 from "@/assets/images/Skool/Classroom.webp";
+import florify from "@/assets/images/Florify.webp";
+import dla1 from "@/assets/images/DLA/dla.webp";
+import dla2 from "@/assets/images/DLA/Team.webp";
+import dla3 from "@/assets/images/DLA/client_info.webp";
+import dla4 from "@/assets/images/DLA/Latest_activity.webp";
+import dla5 from "@/assets/images/DLA/group_chat.webp";
+import snkr1 from "@/assets/images/Sneackers/desktop.webp";
+import snkr2 from "@/assets/images/Sneackers/mobile.webp";
+import snkr3 from "@/assets/images/Sneackers/sneakers.webp";
+import medbozor from "@/assets/images/MedBozor.webp";
+import itCabinet from "@/assets/images/ITPark/cabinet.webp";
+import itMyitpark from "@/assets/images/ITPark/myitpark.webp";
+import itRelocation from "@/assets/images/ITPark/relocation.webp";
 
-useHead({
-  title: "Shahboz Mamatkarimov — Software Engineer",
-  meta: [{ name: "description", content: "Software Engineer building scalable web applications with Vue, Nuxt, React and Node.js" }],
-});
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Shahboz Mamatkarimov",
+  jobTitle: "Software Engineer",
+  url: "https://shahbozmamatkarimov.vercel.app/",
+  image: "https://shahbozmamatkarimov.vercel.app/og-image.png",
+  email: "mailto:shahbozmamatkarimov2303@gmail.com",
+  address: { "@type": "PostalAddress", addressLocality: "Tashkent", addressCountry: "UZ" },
+  sameAs: ["https://github.com/shahbozmamatkarimov", "https://www.linkedin.com/in/shahboz-mamatkarimov-12ba00267"],
+  knowsAbout: ["Vue", "Nuxt", "React", "Next.js", "Node.js", "NestJS", "Flutter", "PostgreSQL"],
+};
 useSeoMeta({
   title: "Shahboz Mamatkarimov — Software Engineer",
   ogTitle: "Shahboz Mamatkarimov — Software Engineer",
-  description: "Software Engineer building scalable web applications with Vue, Nuxt, React and Node.js",
-  keywords:
-    "shahboz, mamatkarimov, software engineer, frontend, backend, fullstack, vue, nuxt, react, nodejs",
-  ogDescription: "Software Engineer building scalable web applications with Vue, Nuxt, React and Node.js",
-  ogImage: "/logo.svg",
-  twitterCard: "/logo.svg",
+  description: "Software Engineer in Tashkent building scalable web apps and CRMs with Vue, Nuxt, React and Node.js. View projects, experience and resume.",
+  ogDescription: "Software Engineer in Tashkent building scalable web apps and CRMs with Vue, Nuxt, React and Node.js. View projects, experience and resume.",
+  keywords: "shahboz mamatkarimov, software engineer, frontend developer, full stack developer, vue, nuxt, react, nodejs, flutter, tashkent, uzbekistan",
+  ogUrl: "https://shahbozmamatkarimov.vercel.app/",
+  ogImage: "https://shahbozmamatkarimov.vercel.app/og-image.png",
+  ogImageAlt: "Shahboz Mamatkarimov — Software Engineer",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Shahboz Mamatkarimov — Software Engineer",
+  twitterDescription: "Software Engineer in Tashkent building scalable web apps and CRMs with Vue, Nuxt, React and Node.js. View projects, experience and resume.",
+  twitterImage: "https://shahbozmamatkarimov.vercel.app/og-image.png",
 });
+useHead({ link: [{ rel: "canonical", href: "https://shahbozmamatkarimov.vercel.app/" }], script: [{ type: "application/ld+json", innerHTML: JSON.stringify(person) }] });
 
 // Career started July 2023
 const years = new Date().getFullYear() - 2023;
@@ -509,6 +523,8 @@ const facts = ["Frontend-focused full-stack engineer", `${projects.length} live 
 // project gallery lightbox
 const gallery = reactive({ open: false, p: 0, i: 0 });
 const current = computed(() => projects[gallery.p]);
+const closeBtn = ref(null);
+let opener = null;
 function openGallery(p) {
   gallery.p = p;
   gallery.i = 0;
@@ -531,6 +547,12 @@ watch(
   () => gallery.open,
   (o) => {
     document.body.style.overflow = o ? "hidden" : "";
+    if (o) {
+      opener = document.activeElement;
+      nextTick(() => closeBtn.value?.focus());
+    } else {
+      opener?.focus?.();
+    }
   }
 );
 
@@ -597,23 +619,7 @@ onMounted(async () => {
   countUp();
   window.addEventListener("keydown", onKey);
   window.addEventListener("scroll", onScroll, { passive: true });
-  let location = await axios.get('https://ipinfo.io/json');
-  location = {
-    ip: location?.data?.ip,
-    city: location?.data?.city,
-    region: location?.data?.region,
-    country: location?.data?.country,
-    loc: location?.data?.loc,
-    timezone: location?.data?.timezone,
-  }
-  $fetch("/api/notify", { method: "POST", body: { markdown: true, silent: true, text: `Kimdir porfolioni kuzatmoqda\\! MAIN PAGE
-        \`\`\`${JSON.stringify(location)}\`\`\`` } })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  visitPing("MAIN PAGE");
 });
 </script>
 
@@ -621,7 +627,7 @@ onMounted(async () => {
 .section { padding-top: 6rem; padding-bottom: 1rem; }
 #contact.section { padding-bottom: 5rem; }
 .section-title { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800; color: #f4f4f5; letter-spacing: -0.02em; }
-.section-sub { margin-top: 0.5rem; font-size: 1.125rem; color: #71717a; }
+.section-sub { margin-top: 0.5rem; font-size: 1.125rem; color: #a1a1aa; }
 
 .hero-name { margin-top: 0.25rem; font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; line-height: 1.1; color: #f4f4f5; letter-spacing: -0.02em; }
 .hero-role { margin-top: 0.5rem; font-size: clamp(2.25rem, 9vw, 4rem); font-weight: 900; line-height: 1; letter-spacing: -0.03em; }
@@ -650,7 +656,7 @@ onMounted(async () => {
 .filter-chip { border-radius: 9999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); padding: .45rem 1rem; font-size: .875rem; color: #d4d4d8; transition: background .2s, border-color .2s, color .2s, transform .2s; }
 .filter-chip:hover { border-color: #22c55e; color: #fff; transform: translateY(-1px); }
 .filter-chip.on { background: #22c55e; border-color: #22c55e; color: #052e16; font-weight: 600; }
-.btn-primary { background: linear-gradient(100deg, #22c55e, #0d9488); color: #fff; box-shadow: 0 10px 40px -10px rgba(34,197,94,.7);
+.btn-primary { background: linear-gradient(100deg, #22c55e, #14b8a6); color: #04210f; font-weight: 700; box-shadow: 0 10px 40px -10px rgba(34,197,94,.7);
   &:hover { transform: translateY(-2px); box-shadow: 0 16px 50px -10px rgba(255,61,119,.8); } }
 .btn-ghost { border: 1px solid rgba(255,255,255,.18); color: #e4e4e7; background: rgba(255,255,255,.03); backdrop-filter: blur(8px);
   &:hover { border-color: #22c55e; color: #22c55e; transform: translateY(-2px); } }

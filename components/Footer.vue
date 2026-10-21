@@ -20,7 +20,7 @@
         <a href="https://www.linkedin.com/in/shahboz-mamatkarimov-12ba00267" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-[#22c55e]"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-    <p class="border-t border-white/5 py-4 text-center text-sm text-zinc-600">
+    <p class="border-t border-white/5 py-4 text-center text-sm text-zinc-400">
       &copy; {{ new Date().getFullYear() }} Shahboz Mamatkarimov &middot; Software Engineer
     </p>
   </footer>

@@ -1,5 +1,6 @@
 <template>
   <nav
+    aria-label="Main"
     class="flex items-center justify-center fixed top-0 left-0 z-[60] w-full"
   >
     <div
@@ -16,20 +17,21 @@
             :key="l.id"
             :to="l.to"
             class="nav-link text-center font-medium leading-7"
+            :aria-current="active === l.id ? 'page' : undefined"
             :class="active === l.id ? 'text-[#22c55e] is-active' : 'text-neutral-400 hover:text-[#22c55e]'"
           >
             {{ l.label }}
           </router-link>
         </div>
         <div class="flex gap-10">
-          <a href="https://github.com/shahbozmamatkarimov" target="_blank" rel="noopener">
+          <a href="https://github.com/shahbozmamatkarimov" target="_blank" rel="noopener" aria-label="GitHub profile">
             <img
               class="h-7 rounded-full"
               src="@/assets/technologies/github.svg"
               alt=""
             />
           </a>
-          <a href="https://www.linkedin.com/in/shahboz-mamatkarimov-12ba00267" target="_blank" rel="noopener">
+          <a href="https://www.linkedin.com/in/shahboz-mamatkarimov-12ba00267" target="_blank" rel="noopener" aria-label="LinkedIn profile">
             <img
               class="h-8 rounded-full w-8"
               src="@/assets/technologies/linkedin.png"
@@ -37,9 +39,10 @@
             />
           </a>
         </div>
-        <div @click="menubar = !menubar" class="sm:hidden block">
-          <img src="@/assets/svg/menu.svg" alt="" />
-        </div>
+        <button type="button" class="sm:hidden block" :aria-label="menubar ? 'Close menu' : 'Open menu'"
+          :aria-expanded="menubar" aria-controls="mobile-menu" @click="menubar = !menubar">
+          <img src="@/assets/svg/menu.svg" alt="" width="32" height="32" />
+        </button>
       </div>
     </div>
 
@@ -47,6 +50,7 @@
     <Transition name="menu">
     <div
       v-if="menubar"
+      id="mobile-menu"
       class="sm:hidden flex flex-col items-center justify-between text-2xl fixed top-[80px] py-10 min-h-[calc(100vh_-_80px)] max-h-[calc(100vh_-_80px)] overflow-hidden overflow-y-auto bg-[#09090b]/95 backdrop-blur-lg w-full md:px-10 px-5 gap-10"
     >
       <router-link
