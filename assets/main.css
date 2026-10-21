@@ -69,3 +69,19 @@ html, body {
   from { border-right-color: #FD6F00; }
   to { border-right-color: transparent; }
 }
+h1 {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media print {
+  nav, footer, .progress, .aurora, .no-print { display: none !important; }
+  html, body, #__nuxt, div { background: #fff !important; color: #111 !important; backdrop-filter: none !important; }
+  * { color: #111 !important; border-color: #ddd !important; box-shadow: none !important; background-image: none !important; }
+  .c_main { color: #c2570a !important; }
+  [data-aos] { opacity: 1 !important; transform: none !important; }
+}

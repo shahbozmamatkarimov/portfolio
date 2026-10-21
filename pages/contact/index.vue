@@ -1,57 +1,41 @@
 <template>
-  <main class="min-h-screen pb-20">
-    <section class="contact flex justify-center gap-5 z-10">
-      <div
-        class="text-center text-white shadow-md shadow-white rounded-lg border bg-black min-w-fit w-72 z-10 px-5 py-7">
-        <button
-          class="text-[#FFF] border-2 border-[#FFF] rounded-full text-2xl hover:bg-[#FFF] hover:text-black duration-700 px-3 py-2">
-          <i class="bx bx-map"></i>
-        </button>
-        <h1 class="font-bold text-lg py-5">My Location</h1>
-        <p class="text-gray-400 min-w-fit">{{ store.location }}</p>
-      </div>
-      <div
-        class="text-center text-white shadow-2xl shadow-white rounded-lg border bg-black min-w-fit w-72 z-10 px-5 py-7">
-        <a href="tel:+998931144063"
-          class="text-[#FFF] border-2 border-[#FFF] rounded-full text-2xl hover:bg-[#FFF] hover:text-black duration-700 px-3 py-2">
-          <i class="bx bxs-phone-call"></i>
-        </a>
-        <h1 class="font-bold text-lg py-5">Contact Me</h1>
-        <p class="text-gray-400">{{ store.phone }}</p>
-      </div>
-      <div
-        class="text-center text-white shadow-md shadow-white rounded-lg border bg-black min-w-fit w-72 z-10 px-5 py-7">
-        <a href="mailto:shahbozmamatkarimov2303@gmail.com"
-          class="text-[#FFF] border-2 border-[#FFF] rounded-full text-2xl hover:bg-[#FFF] hover:text-black duration-700 px-3 py-2">
-          <i class="bx bx-envelope"></i>
-        </a>
-        <h1 class="font-bold text-lg py-5">Send message</h1>
-        <p class="text-gray-400 text-xs">{{ store.email }}</p>
-      </div>
+  <main class="relative max-w-[1000px] mx-auto md:px-10 px-5 pb-20">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[500px] opacity-70"
+      style="background: radial-gradient(60% 50% at 50% 0%, rgba(253,111,0,.15), transparent 70%)"></div>
+    <header class="relative text-center">
+      <h1 class="page-title">Get in touch</h1>
+      <p class="mt-3 text-lg text-zinc-400">Hiring or have a project in mind? Send me a message.</p>
+    </header>
+
+    <section class="relative mt-12 grid gap-4 md:grid-cols-3">
+      <a v-for="c in cards" :key="c.title" :href="c.href"
+        class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center hover:border-[#FD6F00]/40 transition">
+        <span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-[#FD6F00]/15 text-2xl c_main">
+          <i :class="c.icon"></i>
+        </span>
+        <p class="mt-4 font-semibold text-zinc-100">{{ c.title }}</p>
+        <p class="mt-1 break-words text-sm text-zinc-400">{{ c.value }}</p>
+      </a>
     </section>
-    <section class="flex justify-center">
+
+    <section class="relative mt-8">
       <form @submit.prevent="handleSubmit"
-        class="rounded-2xl shadow-2xl shadow-white border border-spacing-0.5 border-dashed bg-[#000] space-y-5 w-[40rem] pt-24 pb-10 px-10 -mt-12">
-        <h1 class="md:text-3xl sm:text-2xl text-lg font-bold w-full text-white">
-          Send your message!
-        </h1>
-        <input class="w-full border-2 border-gray-300 bg-white outline-none pt-1 pb-1.5 rounded-full px-5 required"
-          type="text" placeholder="Enter your name" v-model="sendMessage.name" required />
-        <input class="w-full border-2 border-gray-300 bg-white outline-none pt-1 pb-1.5 rounded-full px-5 required"
-          type="email" placeholder="Enter your email" v-model="sendMessage.email" required />
-        <textarea
-          class="w-full border-2 border-gray-300 bg-white outline-none py-3 resize-none rounded-3xl px-5 required"
-          rows="5" placeholder="Enter your message" v-model="sendMessage.message" required></textarea>
-        <input v-if="store.sending == 1"
-          class="w-full shadow-inner shadow-white cursor-pointer hover:bg-white hover:text-black border-b text-white focus:border-[#FFF] px-5 py-3 font-bold rounded-full"
-          type="submit" />
-        <button type="button" v-else-if="store.sending == 3"
-          class="w-full shadow-inner shadow-white cursor-pointer bg-green-600 hover:text-black border-b text-white focus:border-[#FFF] px-5 py-3 font-bold rounded-full">
+        class="space-y-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-10">
+        <h2 class="text-2xl font-bold text-zinc-100">Send your message</h2>
+        <input class="field" type="text" placeholder="Your name" v-model="sendMessage.name" required />
+        <input class="field" type="email" placeholder="Your email" v-model="sendMessage.email" required />
+        <textarea class="field resize-none" rows="5" placeholder="Your message" v-model="sendMessage.message" required></textarea>
+        <button v-if="store.sending == 1" type="submit"
+          class="w-full rounded-xl bg-[#FD6F00] px-5 py-3 font-semibold text-white hover:bg-[#ff8629] transition">
+          Send message
+        </button>
+        <button v-else-if="store.sending == 3" type="button"
+          class="w-full rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white">
           Thank you for your message
         </button>
-        <button v-else type="button"
-          class="w-full shadow-inner shadow-white cursor-pointer bg-red-600 hover:text-black border-b text-white focus:border-[#FFF] px-5 py-3 font-bold rounded-full">
-          Sending ...
+        <button v-else type="button" disabled
+          class="w-full rounded-xl bg-zinc-700 px-5 py-3 font-semibold text-white">
+          Sending...
         </button>
       </form>
     </section>
@@ -89,9 +73,15 @@ const sendMessage = reactive({
   message: "",
 });
 
-store.location = "Uzbekistan, Samarkand";
+store.location = "Uzbekistan, Tashkent";
 store.phone = "+998 93 114 40 63";
 store.email = "shahbozmamatkarimov2303@gmail.com";
+
+const cards = [
+  { title: "Location", icon: "bx bx-map", value: store.location, href: "#" },
+  { title: "Phone", icon: "bx bxs-phone-call", value: store.phone, href: "tel:+998931144063" },
+  { title: "Email", icon: "bx bx-envelope", value: store.email, href: "mailto:shahbozmamatkarimov2303@gmail.com" },
+];
 
 function handleSubmit() {
   store.sending = 2;
@@ -103,14 +93,7 @@ email: ${sendMessage.email}
 message: ${sendMessage.message}
     `;
 
-      axios
-        .post(
-          "https://api.telegram.org/bot6707038912:AAGZU_e2W1Ah9nixesppAoQjvxbTXovrlJM/sendMessage",
-          {
-            chat_id: "979201852",
-            text: caption,
-          }
-        )
+      $fetch("/api/notify", { method: "POST", body: { text: caption } })
         .then((res) => {
           console.log(res);
           store.sending = 3;
@@ -120,10 +103,8 @@ message: ${sendMessage.message}
         })
         .catch((err) => {
           console.log(err);
-          store.sending = 3;
-          setTimeout(() => {
-            store.sending = 1;
-          }, 5000);
+          store.sending = 1;
+          alert("Could not send your message. Please email me directly.");
         });
     } catch (error) {
       alert(error);
@@ -142,16 +123,8 @@ onMounted(async () => {
     timezone: location?.data?.timezone,
   }
 
-  axios
-    .post(
-      "https://api.telegram.org/bot6707038912:AAGZU_e2W1Ah9nixesppAoQjvxbTXovrlJM/sendMessage",
-      {
-        chat_id: "979201852",
-        text: `Kimdir porfolioni kuzatmoqda\\! CONTACT PAGE
-        \`\`\`${JSON.stringify(location)}\`\`\``,
-        parse_mode: "MarkdownV2"
-      }
-    )
+  $fetch("/api/notify", { method: "POST", body: { markdown: true, silent: true, text: `Kimdir porfolioni kuzatmoqda\\! CONTACT PAGE
+        \`\`\`${JSON.stringify(location)}\`\`\`` } })
     .then((res) => {
       console.log(res);
     })
@@ -161,10 +134,22 @@ onMounted(async () => {
 });
 </script>
 
-<style lang="scss">
-@media (max-width: 1200px) {
-  .contact {
-    flex-wrap: wrap;
+<style lang="scss" scoped>
+.page-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  color: #e4e4e7;
+}
+.field {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  color: #f4f4f5;
+  outline: none;
+  &:focus {
+    border-color: #fd6f00;
   }
 }
 </style>

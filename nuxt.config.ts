@@ -12,14 +12,18 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
         },
-        {
-          rel: "icon",
-          href: "/logo.svg",
-        },
+        { rel: "icon", type: "image/svg+xml", href: "/logo.svg?v=2" },
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png?v=2" },
+        { rel: "shortcut icon", href: "/favicon-32.png?v=2" },
+        { rel: "apple-touch-icon", href: "/favicon.png?v=2" },
       ],
     },
   },
   plugins: [{ src: "~/plugins/aos", mode: "client", ssr: false }],
+  experimental: {
+    // workaround: radix3 route-rules manifest crashes the client router on nuxt 3.8.x
+    appManifest: false,
+  },
   imports: {
     autoImport: true,
   },
@@ -29,6 +33,11 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  runtimeConfig: {
+    // set NUXT_TELEGRAM_TOKEN and NUXT_TELEGRAM_CHAT_ID in the environment
+    telegramToken: "",
+    telegramChatId: "",
   },
   // runtimeConfig: {
   //   public: {

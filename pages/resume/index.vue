@@ -1,272 +1,96 @@
 <template>
-  <main class="text-white max-w-[1800px] space-y-10 mx-auto md:px-10 px-5 pb-10">
-    <section
-      class="sm:flex flex-wrap items-center justify-between shadow-inner border-b border-white/50 shadow-white bg-black rounded-xl py-4 px-5">
-      <div class="flex items-center gap-5">
-        <img class="w-7" src="@/assets/resume/phone.svg" alt="" />
-        <div>
-          <p class="font-[900]">Phone</p>
-          <p>+998 931144063</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-5">
-        <img class="w-7 min-w-[28px]" src="@/assets/resume/email.svg" alt="" />
-        <div>
-          <p class="font-[900]">Email</p>
-          <p class="break-words w-[90%] lg:whitespace-nowrap">
-            shahbozmamatkarimov2303@gmail.com
-          </p>
-        </div>
-      </div>
-      <div class="flex items-center gap-5">
-        <img class="w-7" src="@/assets/resume/location.svg" alt="" />
-        <div>
-          <p class="font-[900]">Address</p>
-          <p>Uzbekistan, Samarkand</p>
+  <main class="relative max-w-[1000px] mx-auto md:px-10 px-5 pb-20 text-zinc-300">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[500px] opacity-70"
+      style="background: radial-gradient(60% 50% at 50% 0%, rgba(253,111,0,.15), transparent 70%)"></div>
+
+    <header class="relative">
+      <h1 class="page-title">Shahboz Mamatkarimov</h1>
+      <p class="mt-2 text-2xl font-bold c_main">Full Stack Web Developer</p>
+      <a href="/Shahboz-Mamatkarimov-Resume.pdf" download="Shahboz-Mamatkarimov-Resume.pdf"
+        class="mt-5 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#FD6F00] to-pink-500 px-5 py-2.5 font-semibold text-white transition hover:-translate-y-0.5">
+        <i class="bx bx-download"></i> Download PDF
+      </a>
+      <ul class="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-zinc-400">
+        <li class="flex items-center gap-2"><img class="w-5" src="@/assets/resume/phone.svg" alt="" />+998 93 114 40 63</li>
+        <li class="flex items-center gap-2"><img class="w-5" src="@/assets/resume/email.svg" alt="" />shahbozmamatkarimov2303@gmail.com</li>
+        <li class="flex items-center gap-2"><img class="w-5" src="@/assets/resume/location.svg" alt="" />Tashkent, Uzbekistan</li>
+        <li class="flex items-center gap-2"><i class="bx bx-link text-xl text-[#FD6F00]"></i><a href="https://shahbozmamatkarimov.vercel.app" target="_blank" rel="noopener" class="hover:text-[#FD6F00]">shahbozmamatkarimov.vercel.app</a></li>
+        <li class="flex items-center gap-2"><i class="bx bxl-linkedin text-xl text-[#FD6F00]"></i><a href="https://www.linkedin.com/in/shahboz-mamatkarimov-12ba00267" target="_blank" rel="noopener" class="hover:text-[#FD6F00]">linkedin.com/in/shahboz-mamatkarimov</a></li>
+      </ul>
+    </header>
+
+    <section class="block-card">
+      <h2 class="block-title">Professional Summary</h2>
+      <p class="leading-relaxed text-zinc-400">
+        Results-driven Full Stack Developer with experience engineering scalable web applications, modern CRMs, and
+        cross-platform solutions. Proficient in Node.js, React, Next.js, Vue/Nuxt, and Flutter, with a proven track
+        record of optimizing client-side performance, refining system architecture, and delivering high-impact
+        features that support business growth.
+      </p>
+    </section>
+
+    <section class="block-card">
+      <h2 class="block-title">Work Experience</h2>
+      <div class="space-y-6">
+        <div v-for="j in jobs" :key="j.company" class="flex items-start gap-4">
+          <img v-if="j.logo" :src="j.logo" alt="" class="h-10 w-10 rounded-md bg-white object-contain p-1" />
+          <span v-else class="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-[#FD6F00] font-bold text-white">{{ j.company[0] }}</span>
+          <div class="w-full">
+            <div class="flex flex-wrap justify-between gap-1">
+              <div>
+                <h3 class="font-semibold text-zinc-100">{{ j.role }}</h3>
+                <p class="text-zinc-400">{{ j.company }}</p>
+              </div>
+              <div class="text-sm text-zinc-500 sm:text-right">
+                <p>{{ j.period }}</p>
+                <p>{{ j.location }}</p>
+              </div>
+            </div>
+            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400 marker:text-[#FD6F00]">
+              <li v-for="b in j.bullets" :key="b">{{ b }}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
-    <section class="sm:flex gap-10">
-      <ol class="relative min-w-[20%] border-l-4 ml-2 text-white border-black">
-        <li class="flex justify-between mb-10 ml-5">
-          <div>
-            <div class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"></div>
-            <h1 class="flex items-center gap-2 mb-4">
-              <img src="@/assets/resume/skills.svg" alt="" />Skills
-            </h1>
-            <div class="sm:block flex flex-wrap gap-5">
-              <p v-for="i in data.skills" class="mb-1 leading-5 font-medium text-gray-100">
-                {{ i }}
-              </p>
-            </div>
+
+    <section class="block-card">
+      <h2 class="block-title">Projects</h2>
+      <div class="space-y-5">
+        <div v-for="p in projects" :key="p.url">
+          <h3 class="font-semibold text-zinc-100">{{ p.name }}</h3>
+          <a :href="p.url" target="_blank" rel="noopener" class="text-sm text-[#FD6F00] hover:underline">{{ p.url }}</a>
+          <p class="mt-1 text-zinc-500">{{ p.text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-6 grid gap-6 md:grid-cols-2">
+      <div class="block-card !mt-0">
+        <h2 class="block-title">Technical Skills</h2>
+        <div class="space-y-4">
+          <div v-for="g in skills" :key="g.title">
+            <h3 class="mb-2 text-sm font-semibold text-zinc-100">{{ g.title }}</h3>
+            <ul class="flex flex-wrap gap-2">
+              <li v-for="i in g.items" :key="i" class="chip">{{ i }}</li>
+            </ul>
           </div>
-        </li>
-        <li class="flex justify-between mb-10 ml-5">
-          <div>
-            <div class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"></div>
-            <h1 class="flex items-center gap-2 mb-4">
-              <img src="@/assets/resume/skills.svg" alt="" />Learning
-            </h1>
-            <div class="sm:block flex flex-wrap gap-5">
-              <p v-for="i in data.learning" class="mb-1 leading-5 font-medium text-gray-100">
-                {{ i }}
-              </p>
-            </div>
+        </div>
+      </div>
+      <div class="block-card !mt-0">
+        <h2 class="block-title">Education &amp; Training</h2>
+        <div class="space-y-4">
+          <div v-for="e in education" :key="e.title">
+            <h3 class="font-semibold text-zinc-100">{{ e.title }}</h3>
+            <p class="text-zinc-400">Najot Ta'lim &middot; Tashkent, Uzbekistan</p>
+            <p class="text-sm text-zinc-500">{{ e.period }}</p>
           </div>
-        </li>
-        <li class="flex justify-between mb-10 ml-5">
-          <div>
-            <div class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"></div>
-            <h1 class="flex items-center gap-2 mb-4">
-              <img src="@/assets/resume/lang.svg" alt="" />Languages
-            </h1>
-            <p v-for="i in data.languages" class="mb-1 leading-5 font-medium text-gray-100">
-              {{ i }}
-            </p>
-          </div>
-        </li>
-        <li class="flex justify-between mb-10 ml-5">
-          <div>
-            <div class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"></div>
-            <h1 class="flex items-center md:text-lg text-[16px] gap-2 mb-4">
-              <img src="@/assets/resume/code.svg" alt="" />Development
-            </h1>
-            <div>
-              <p class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100">
-                Web development
-              </p>
-              <p class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100">
-                Front-end
-              </p>
-              <p class="mb-1 leading-6 bg-gray-500 rounded-md px-3 pb-1 pt-0.5 font-medium text-gray-100">
-                Back-end
-              </p>
-            </div>
-          </div>
-        </li>
-      </ol>
-      <ol class="relative border-l-4 ml-2 text-white border-black">
-        <li class="flex justify-between mb-10 ml-5">
-          <div>
-            <div class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"></div>
-            <h1 class="uppercase font-bold mb-4">Personal Introduction</h1>
-            <p class="mb-1 leading-5 font-medium text-gray-100">
-              Highly skilled Full Stack Web Developer with 2023 experience in
-              designing, developing and maintaining dynamic web applications.
-              Adept at translating complex business requirements into scalable
-              and robust solutions, I bring a comprehensive skill set that spans
-              frontend and backend technologies. My passion for clean, efficient
-              code and my commitment to staying abreast of emerging trends in
-              web development make me a valuable asset to any project.
-            </p>
-          </div>
-        </li>
-        <li class="flex justify-between mb-10 ml-5">
-          <div class="w-full">
-            <div class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"></div>
-            <h1 class="uppercase font-bold mb-4">Education</h1>
-            <div class="space-y-5">
-              <div class="flex items-center gap-2 w-full">
-                <a href="https://www.linkedin.com/company/najottalim" target="_blank">
-                  <img class="h-10 w-10 rounded-md" src="@/assets/resume/najottalim.jfif" alt="" />
-                </a>
-                <div class="flex justify-between w-full">
-                  <div>
-                    <h1>Foundation</h1>
-                    <p>Najot ta’lim</p>
-                  </div>
-                  <div class="text-end">
-                    <p>02/2022 - 05/2022</p>
-                    <p>Tashkent, Uzbekistan</p>
-                  </div>
-                </div>
-              </div>
-              <div class="flex items-center gap-2 w-full">
-                <a href="https://www.linkedin.com/company/najottalim" target="_blank">
-                  <img class="h-10 w-10 rounded-md" src="@/assets/resume/najottalim.jfif" alt="" />
-                </a>
-                <div class="flex justify-between w-full">
-                  <div>
-                    <h1>Full stack NodeJS/VueJS bootcamp</h1>
-                    <p>Najot ta’lim</p>
-                  </div>
-                  <div class="text-end">
-                    <p>05/2022 - 07/2023</p>
-                    <p>Tashkent, Uzbekistan</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="flex justify-between mb-10 ml-5">
-          <div class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"></div>
-          <div class="w-full space-y-5">
-            <h1 class="uppercase font-bold mb-4">Experience</h1>
-            <div class="flex items-center gap-2 w-full">
-              <a href="https://www.linkedin.com/company/hoca-inc" target="_blank">
-                <img class="h-10 w-10 rounded-md" src="@/assets/resume/hoca.svg" alt="" />
-              </a>
-              <div class="flex justify-between w-full">
-                <div>
-                  <h1>Hoca Inc</h1>
-                  <p>Full Stack Web Developer</p>
-                </div>
-                <div class="text-end">
-                  <p>07/2023 - 12/2023</p>
-                  <p>Seoul, Korea</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-2 w-full">
-              <a href="https://www.linkedin.com/company/programmeruz" target="_blank">
-                <img class="h-10 w-10 rounded-md" src="@/assets/resume/programmeruz.svg" alt="" />
-              </a>
-              <div class="flex justify-between w-full">
-                <div>
-                  <h1>Programmer UZ</h1>
-                  <p>Frontend Developer</p>
-                </div>
-                <div class="text-end">
-                  <p>08/2023 - 01/2025</p>
-                  <p>Tashkent/Samarkand, Uzbekistan</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-2 w-full">
-              <a href="https://www.linkedin.com/company/uniplatforms" target="_blank">
-                <img class="h-10 w-10 rounded-md" src="@/assets/resume/noimage.gif" alt="" />
-              </a>
-              <div class="flex justify-between w-full">
-                <div>
-                  <h1>Uniplatforms</h1>
-                  <p>Frontend Developer</p>
-                </div>
-                <div class="text-end">
-                  <p>01/2025 - Present</p>
-                  <p>Tashkent, Uzbekistan</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="flex justify-between mb-10 ml-5">
-          <div class="absolute w-5 h-5 bg-black rounded-full -left-3 border-2 border-white"></div>
-          <div>
-            <h1 class="flex items-center gap-2 mb-4">
-              Live Website & Application Projects
-            </h1>
-            <div class="space-y-5">
-              <div class="flex gap-2">
-                <a class="min-w-fit max-w-[20px] pt-2" href="https://learnify.uz" target="_blank">
-                  <img class="h-10 w-10 rounded-md" src="@/assets/resume/logos/skool.svg" alt="" />
-                </a>
-                <div>
-                  <h1 class="font-semibold">Skool (Web)</h1>
-                  <a class="text-blue-700 text-sm" href="https://learnify.uz" target="_blank">https://learnify.uz</a>
-                  <p class="text-white/50 mt-2">
-                    I work as a frontend developer
-                  </p>
-                </div>
-              </div>
-              <div class="flex gap-2">
-                <a class="min-w-fit max-w-[20px] pt-2" href="https://florify.uz" target="_blank">
-                  <img class="h-10 w-10 rounded-md" src="@/assets/resume/logos/florify.svg" alt="" />
-                </a>
-                <div>
-                  <h1 class="font-semibold">Florify (Web)</h1>
-                  <a class="text-blue-700 text-sm" href="https://florify.uz" target="_blank">https://florify.uz</a>
-                  <p class="text-white/50 mt-2">
-                    I work as a frontend developer
-                  </p>
-                </div>
-              </div>
-              <div class="flex gap-2">
-                <a class="min-w-fit max-w-[20px] flex items-center rounded-md h-10 w-10 bg-white"
-                  href="https://dev-dla.newtribe.nl" target="_blank">
-                  <img class="w-10 px-1" src="@/assets/resume/logos/dla.svg" alt="" />
-                </a>
-                <div>
-                  <h1 class="font-semibold">Digital Legal Assistant (Web)</h1>
-                  <a class="text-blue-700 text-sm" href="https://dev-dla.newtribe.nl"
-                    target="_blank">https://dev-dla.newtribe.nl</a>
-                  <p class="text-white/50 mt-2">
-                    I work as a frontend developer
-                  </p>
-                </div>
-              </div>
-              <div class="flex gap-2">
-                <a class="min-w-fit max-w-[20px] pt-2" href="https://dev-ecommsnkr.newtribe.nl" target="_blank">
-                  <img class="w-10 min-w-[20px] rounded-md" src="@/assets/resume/logos/sneacker.svg" alt="" />
-                </a>
-                <div>
-                  <h1 class="font-semibold">Sneackers (Web)</h1>
-                  <a class="text-blue-700 text-sm" href="https://dev-ecommsnkr.newtribe.nl"
-                    target="_blank">https://dev-ecommsnkr.newtribe.nl</a>
-                  <p class="text-white/50 mt-2">
-                    We worked as a team, and the frontend developers are two
-                    people
-                  </p>
-                </div>
-              </div>
-              <div class="flex gap-2">
-                <a class="min-w-fit max-w-[20px] flex items-center rounded-md h-10 w-10 bg-white"
-                  href="https://medbozor.uz" target="_blank">
-                  <img class="w-10 px-1" src="@/assets/resume/logos/medbozor.svg" alt="" />
-                </a>
-                <div>
-                  <h1 class="font-semibold">Med bozor (Web)</h1>
-                  <a class="text-blue-700 text-sm" href="https://medbozor.uz" target="_blank">https://medbozor.uz</a>
-                  <p class="text-white/50 mt-2">
-                    We worked as a team, and the frontend developers are two
-                    people
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ol>
+        </div>
+        <h2 class="block-title mt-6">Languages</h2>
+        <ul class="flex flex-wrap gap-2">
+          <li v-for="i in languages" :key="i" class="chip">{{ i }}</li>
+        </ul>
+      </div>
     </section>
   </main>
 </template>
@@ -276,7 +100,7 @@ import axios from "axios";
 
 useHead({
   title: "Shahboz Mamatkarimov - resume",
-  meta: [{ name: "description", content: "Full stack web developer" }],
+  meta: [{ name: "description", content: "Full Stack Web Developer" }],
 });
 useSeoMeta({
   title: "Shahboz Mamatkarimov - resume",
@@ -289,27 +113,53 @@ useSeoMeta({
   twitterCard: "/logo.svg",
 });
 
-const data = ref({
-  skills: [
-    "HTML",
-    "CSS",
-    "SASS/SCSS",
-    "Bootstrap",
-    "Tailwind",
-    "JavaScript",
-    "jQuery",
-    "Vue",
-    "Nuxt",
-    "React",
-    "Next",
-    "NodeJS",
-    "NestJS",
-    "PostgreSQL",
-    "MongoDB",
-  ],
-  learning: ["Flutter", "ThreeJS"],
-  languages: ["Uzbek", "English"],
-});
+import hocaLogo from "@/assets/resume/hoca.svg";
+import programmerLogo from "@/assets/resume/programmeruz.svg";
+
+const jobs = [
+  {
+    role: "Frontend Developer", company: "Uniplatforms", period: "Jan 2025 – Present", location: "Tashkent, Uzbekistan", logo: null,
+    bullets: [
+      "Modernized user interface components for flagship enterprise products using modern JavaScript frameworks, improving overall WCAG accessibility standards and cross-browser performance consistency.",
+      "Optimized client-side rendering pipeline and asset delivery, reducing initial page load times by ~25% and enhancing user retention across primary workflows.",
+    ],
+  },
+  {
+    role: "Frontend Developer", company: "ProgrammerUZ", period: "Aug 2023 – Jan 2025", location: "Tashkent, Uzbekistan", logo: programmerLogo,
+    bullets: [
+      "Refined client-side architecture for mission-critical web applications by integrating modular, re-usable component patterns and establishing automated test coverage.",
+      "Streamlined code review processes and modularized state management pipelines, ensuring seamless long-term scalability and code maintainability for high-traffic clients.",
+    ],
+  },
+  {
+    role: "Full Stack Developer", company: "Hoca Inc", period: "Jul 2023 – Jan 2024", location: "Seoul, South Korea (Remote)", logo: hocaLogo,
+    bullets: [
+      "Engineered robust end-to-end web applications connecting modern Vue/React frontend architectures with Node.js backend microservices, elevating core user engagement.",
+      "Architected real-time client interaction modules using WebSocket protocols and dynamic RESTful APIs to deliver seamless user experience across core workflows.",
+    ],
+  },
+];
+
+const education = [
+  { title: "Full Stack NodeJS / VueJS Bootcamp", period: "May 2022 – Jul 2023" },
+  { title: "IT Foundation Course", period: "2022" },
+];
+
+const projects = [
+  { name: "Skool", url: "https://learnify.uz", text: "Online course platform. Frontend developer." },
+  { name: "Florify", url: "https://florify.uz", text: "Flower e-commerce. Frontend developer." },
+  { name: "Digital Legal Assistant", url: "https://dev-dla.newtribe.nl", text: "Legal workspace. Frontend developer." },
+  { name: "Sneakers store", url: "https://dev-ecommsnkr.newtribe.nl", text: "E-commerce. Two-person frontend team." },
+  { name: "MedBozor", url: "https://medbozor.uz", text: "Medical marketplace. Two-person frontend team." },
+];
+
+const skills = [
+  { title: "Frontend", items: ["React", "Next.js", "Vue", "Nuxt", "TypeScript", "JavaScript", "Tailwind", "SASS/SCSS", "Bootstrap", "HTML5/CSS3"] },
+  { title: "Backend", items: ["Node.js", "Express", "NestJS", "WebSocket", "REST APIs", "Git", "CI/CD Baselines"] },
+  { title: "Databases", items: ["PostgreSQL", "MySQL", "MongoDB"] },
+  { title: "Mobile & Misc", items: ["Dart", "Flutter"] },
+];
+const languages = ["Uzbek (Native)", "English (Intermediate)"];
 
 onMounted(async () => {
   let location = await axios.get('https://ipinfo.io/json');
@@ -322,23 +172,44 @@ onMounted(async () => {
     timezone: location?.data?.timezone,
   }
 
-  axios
-    .post(
-      "https://api.telegram.org/bot6707038912:AAGZU_e2W1Ah9nixesppAoQjvxbTXovrlJM/sendMessage",
-      {
-        chat_id: "979201852",
-        text: `Kimdir porfolioni kuzatmoqda\\! RESUME PAGE
-         \`\`\`${JSON.stringify(location)}\`\`\``,
-        parse_mode: "MarkdownV2"
-      }
-    )
+  $fetch("/api/notify", { method: "POST", body: { markdown: true, silent: true, text: `Kimdir porfolioni kuzatmoqda\\! RESUME PAGE
+         \`\`\`${JSON.stringify(location)}\`\`\`` } })
     .then((res) => {
       console.log(res);
     })
     .catch((err) => {
-      console.log(res);
+      console.log(err);
     });
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.page-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  color: #e4e4e7;
+}
+.block-card {
+  position: relative;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+}
+.block-title {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fd6f00;
+}
+.chip {
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  color: #d4d4d8;
+}
+</style>
