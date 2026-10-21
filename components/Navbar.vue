@@ -16,7 +16,7 @@
             :key="l.id"
             :to="l.to"
             class="nav-link text-center font-medium leading-7"
-            :class="active === l.id ? 'text-[#FD6F00] is-active' : 'text-neutral-400 hover:text-[#FD6F00]'"
+            :class="active === l.id ? 'text-[#22c55e] is-active' : 'text-neutral-400 hover:text-[#22c55e]'"
           >
             {{ l.label }}
           </router-link>
@@ -54,7 +54,7 @@
         :key="l.id"
         :to="l.to"
         class="text-center font-medium leading-7"
-        :class="active === l.id ? 'text-[#FD6F00]' : 'text-neutral-400 hover:text-[#FD6F00]'"
+        :class="active === l.id ? 'text-[#22c55e]' : 'text-neutral-400 hover:text-[#22c55e]'"
       >
         {{ l.label }}
       </router-link>
@@ -141,7 +141,7 @@ watch(
   bottom: -4px;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #fd6f00, #ec4899);
+  background: linear-gradient(90deg, #22c55e, #14b8a6);
   transform: scaleX(0);
   transition: transform 0.25s;
 }

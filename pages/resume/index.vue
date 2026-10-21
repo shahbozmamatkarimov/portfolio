@@ -1,21 +1,21 @@
 <template>
   <main class="relative max-w-[1000px] mx-auto md:px-10 px-5 pb-20 text-zinc-300">
     <div class="pointer-events-none absolute inset-x-0 top-0 h-[500px] opacity-70"
-      style="background: radial-gradient(60% 50% at 50% 0%, rgba(253,111,0,.15), transparent 70%)"></div>
+      style="background: radial-gradient(60% 50% at 50% 0%, rgba(34,197,94,.15), transparent 70%)"></div>
 
     <header class="relative">
       <h1 class="page-title">Shahboz Mamatkarimov</h1>
       <p class="mt-2 text-2xl font-bold c_main">Full Stack Web Developer</p>
       <a href="/Shahboz-Mamatkarimov-Resume.pdf" download="Shahboz-Mamatkarimov-Resume.pdf"
-        class="mt-5 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#FD6F00] to-pink-500 px-5 py-2.5 font-semibold text-white transition hover:-translate-y-0.5">
+        class="mt-5 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#22c55e] to-teal-600 px-5 py-2.5 font-semibold text-white transition hover:-translate-y-0.5">
         <i class="bx bx-download"></i> Download PDF
       </a>
       <ul class="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-zinc-400">
         <li class="flex items-center gap-2"><img class="w-5" src="@/assets/resume/phone.svg" alt="" />+998 93 114 40 63</li>
         <li class="flex items-center gap-2"><img class="w-5" src="@/assets/resume/email.svg" alt="" />shahbozmamatkarimov2303@gmail.com</li>
         <li class="flex items-center gap-2"><img class="w-5" src="@/assets/resume/location.svg" alt="" />Tashkent, Uzbekistan</li>
-        <li class="flex items-center gap-2"><i class="bx bx-link text-xl text-[#FD6F00]"></i><a href="https://shahbozmamatkarimov.vercel.app" target="_blank" rel="noopener" class="hover:text-[#FD6F00]">shahbozmamatkarimov.vercel.app</a></li>
-        <li class="flex items-center gap-2"><i class="bx bxl-linkedin text-xl text-[#FD6F00]"></i><a href="https://www.linkedin.com/in/shahboz-mamatkarimov-12ba00267" target="_blank" rel="noopener" class="hover:text-[#FD6F00]">linkedin.com/in/shahboz-mamatkarimov</a></li>
+        <li class="flex items-center gap-2"><i class="bx bx-link text-xl text-[#22c55e]"></i><a href="https://shahbozmamatkarimov.vercel.app" target="_blank" rel="noopener" class="hover:text-[#22c55e]">shahbozmamatkarimov.vercel.app</a></li>
+        <li class="flex items-center gap-2"><i class="bx bxl-linkedin text-xl text-[#22c55e]"></i><a href="https://www.linkedin.com/in/shahboz-mamatkarimov-12ba00267" target="_blank" rel="noopener" class="hover:text-[#22c55e]">linkedin.com/in/shahboz-mamatkarimov</a></li>
       </ul>
     </header>
 
@@ -34,7 +34,7 @@
       <div class="space-y-6">
         <div v-for="j in jobs" :key="j.company" class="flex items-start gap-4">
           <img v-if="j.logo" :src="j.logo" alt="" class="h-10 w-10 rounded-md bg-white object-contain p-1" />
-          <span v-else class="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-[#FD6F00] font-bold text-white">{{ j.company[0] }}</span>
+          <span v-else class="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-[#22c55e] font-bold text-white">{{ j.company[0] }}</span>
           <div class="w-full">
             <div class="flex flex-wrap justify-between gap-1">
               <div>
@@ -46,7 +46,7 @@
                 <p>{{ j.location }}</p>
               </div>
             </div>
-            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400 marker:text-[#FD6F00]">
+            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400 marker:text-[#22c55e]">
               <li v-for="b in j.bullets" :key="b">{{ b }}</li>
             </ul>
           </div>
@@ -59,7 +59,7 @@
       <div class="space-y-5">
         <div v-for="p in projects" :key="p.url">
           <h3 class="font-semibold text-zinc-100">{{ p.name }}</h3>
-          <a :href="p.url" target="_blank" rel="noopener" class="text-sm text-[#FD6F00] hover:underline">{{ p.url }}</a>
+          <a :href="p.url" target="_blank" rel="noopener" class="text-sm text-[#22c55e] hover:underline">{{ p.url }}</a>
           <p class="mt-1 text-zinc-500">{{ p.text }}</p>
         </div>
       </div>
@@ -151,6 +151,9 @@ const projects = [
   { name: "Digital Legal Assistant", url: "https://dev-dla.newtribe.nl", text: "Legal workspace. Frontend developer." },
   { name: "Sneakers store", url: "https://dev-ecommsnkr.newtribe.nl", text: "E-commerce. Two-person frontend team." },
   { name: "MedBozor", url: "https://medbozor.uz", text: "Medical marketplace. Two-person frontend team." },
+  { name: "IT Park Cabinet", url: "https://cabinet.it-park.uz/", text: "Large CRM for IT Park Uzbekistan: companies, residents, reports and applications. Frontend developer." },
+  { name: "My IT Park", url: "https://my.it-park.uz/?lang=en", text: "Resident portal with a tax calculator. Frontend developer." },
+  { name: "IT Relocation", url: "https://it-relocation.uz/", text: "Relocation platform for IT professionals moving to Uzbekistan. Frontend developer." },
 ];
 
 const skills = [
@@ -203,7 +206,7 @@ onMounted(async () => {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #fd6f00;
+  color: #22c55e;
 }
 .chip {
   border-radius: 9999px;

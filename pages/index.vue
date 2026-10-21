@@ -61,7 +61,7 @@
     <span class="s">"Vue"</span>, <span class="s">"Nuxt"</span>, <span class="s">"React"</span>, <span class="s">"Next.js"</span>,
     <span class="s">"Node.js"</span>, <span class="s">"NestJS"</span>, <span class="s">"PostgreSQL"</span>,
   ],
-  <span class="p">shipped</span>: <span class="s">"5 live products"</span>,
+  <span class="p">shipped</span>: <span class="s">"{{ projects.length }} live products"</span>,
   <span class="p">openToWork</span>: <span class="n">true</span>,
 };</pre>
           </div>
@@ -74,7 +74,7 @@
         <div class="mt-5 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
           <div v-for="c in experience" :key="c.company" class="flex items-center gap-3 text-zinc-300">
             <img v-if="c.logo" :src="c.logo" alt="" class="h-8 w-8 rounded-md bg-white object-contain p-1" />
-            <span v-else class="grid h-8 w-8 place-items-center rounded-md bg-gradient-to-br from-[#FD6F00] to-pink-500 text-sm font-bold text-white">{{ c.company[0] }}</span>
+            <span v-else class="grid h-8 w-8 place-items-center rounded-md bg-gradient-to-br from-[#22c55e] to-teal-600 text-sm font-bold text-white">{{ c.company[0] }}</span>
             <span class="font-semibold">{{ c.company }}</span>
           </div>
         </div>
@@ -101,7 +101,7 @@
               <div class="flex flex-wrap items-start justify-between gap-3">
                 <div class="flex items-center gap-4">
                   <img v-if="job.logo" :src="job.logo" alt="" class="h-12 w-12 rounded-xl bg-white object-contain p-1.5" />
-                  <span v-else class="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[#FD6F00] to-pink-500 text-lg font-bold text-white">{{ job.company[0] }}</span>
+                  <span v-else class="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[#22c55e] to-teal-600 text-lg font-bold text-white">{{ job.company[0] }}</span>
                   <div>
                     <h3 class="text-xl font-semibold text-zinc-100">{{ job.role }}</h3>
                     <p class="text-zinc-400">{{ job.company }} &middot; {{ job.location }}</p>
@@ -119,11 +119,18 @@
       <section id="projects" class="section">
         <h2 data-aos="fade-up" class="section-title">Featured <span class="gradient-text">Projects</span></h2>
         <p data-aos="fade-up" class="section-sub">Live products I've helped build</p>
-        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-6">
-          <article v-for="(p, idx) in projects" :key="p.name" data-aos="fade-up"
-            class="glass spot group flex flex-col overflow-hidden" :class="idx < 3 ? 'xl:col-span-2' : 'xl:col-span-3'" @mousemove="spot">
+        <div data-aos="fade-up" class="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Filter projects">
+          <button v-for="c in categories" :key="c" type="button" role="tab" :aria-selected="filter === c"
+            class="filter-chip" :class="{ on: filter === c }" @click="filter = c">
+            {{ c }} <span class="opacity-60">{{ c === 'All' ? projects.length : projects.filter((p) => p.cat === c).length }}</span>
+          </button>
+        </div>
+        <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-6">
+          <article v-for="(p, idx) in projects" v-show="filter === 'All' || p.cat === filter" :key="p.name" data-aos="fade-up"
+            class="glass spot group flex flex-col overflow-hidden" :class="spanOf(idx)" @mousemove="spot">
             <div class="relative block h-[300px] cursor-zoom-in overflow-hidden bg-white xl:h-[340px]" @click="openGallery(idx)">
-              <div class="animate_scroll" :class="p.pad">
+              <img v-if="p.fit" :src="p.images[0]" alt="" loading="lazy" class="h-full w-full object-cover object-left-top" />
+              <div v-else class="animate_scroll" :class="p.pad">
                 <img v-for="(img, i) in p.images" :key="i" :src="img" alt="" loading="lazy" class="w-full object-cover" />
               </div>
               <span class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/60 opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
@@ -154,7 +161,7 @@
             <h3 class="mb-5 text-xs font-semibold uppercase tracking-[0.2em] c_main">{{ group.title }}</h3>
             <ul class="grid grid-cols-3 gap-4">
               <li v-for="t in group.items" :key="t.name" class="group flex flex-col items-center gap-2 text-center">
-                <span class="grid h-14 w-14 place-items-center rounded-xl bg-white/5 p-2.5 transition duration-300 group-hover:-translate-y-1 group-hover:bg-white/10 group-hover:shadow-[0_8px_30px_rgba(253,111,0,.25)]">
+                <span class="grid h-14 w-14 place-items-center rounded-xl bg-white/5 p-2.5 transition duration-300 group-hover:-translate-y-1 group-hover:bg-white/10 group-hover:shadow-[0_8px_30px_rgba(34,197,94,.25)]">
                   <img :src="t.icon" :alt="t.name" loading="lazy" class="max-h-full max-w-full object-contain" />
                 </span>
                 <span class="text-xs text-zinc-400">{{ t.name }}</span>
@@ -171,7 +178,7 @@
         <div class="mt-12 grid gap-4 md:grid-cols-3 md:grid-rows-2">
           <div v-for="(c, i) in bento" :key="c.title" data-aos="fade-up" :data-aos-delay="i * 80"
             class="glass spot p-7" :class="c.span" @mousemove="spot">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-[#FD6F00]/15 text-2xl c_main"><i :class="c.icon"></i></span>
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-[#22c55e]/15 text-2xl c_main"><i :class="c.icon"></i></span>
             <h3 class="mt-5 text-xl font-semibold text-zinc-100">{{ c.title }}</h3>
             <p class="mt-2 leading-relaxed text-zinc-400">{{ c.text }}</p>
           </div>
@@ -198,13 +205,13 @@
             <ul class="space-y-3">
               <li v-for="c in contacts" :key="c.label">
                 <a :href="c.href" :target="c.external ? '_blank' : undefined" rel="noopener"
-                  class="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-[#FD6F00]/50 hover:bg-white/[0.07]">
-                  <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#FD6F00]/15 text-2xl c_main"><i :class="c.icon"></i></span>
+                  class="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-[#22c55e]/50 hover:bg-white/[0.07]">
+                  <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#22c55e]/15 text-2xl c_main"><i :class="c.icon"></i></span>
                   <span class="min-w-0">
                     <span class="block text-xs uppercase tracking-widest text-zinc-500">{{ c.label }}</span>
                     <span class="block truncate font-medium text-zinc-100">{{ c.value }}</span>
                   </span>
-                  <i class="bx bx-right-arrow-alt ml-auto text-2xl text-zinc-600 transition group-hover:translate-x-1 group-hover:text-[#FD6F00]"></i>
+                  <i class="bx bx-right-arrow-alt ml-auto text-2xl text-zinc-600 transition group-hover:translate-x-1 group-hover:text-[#22c55e]"></i>
                 </a>
               </li>
               <li>
@@ -237,20 +244,20 @@
           </div>
 
           <div class="relative flex min-h-0 grow items-center justify-center px-4 md:px-16" @click.self="closeGallery">
-            <button v-if="current.images.length > 1" type="button" aria-label="Previous" class="absolute left-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/40 bg-black/70 text-2xl text-white shadow-lg backdrop-blur hover:bg-[#FD6F00] md:left-6" @click="step(-1)">
+            <button v-if="current.images.length > 1" type="button" aria-label="Previous" class="absolute left-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/40 bg-black/70 text-2xl text-white shadow-lg backdrop-blur hover:bg-[#22c55e] md:left-6" @click="step(-1)">
               <i class="bx bx-chevron-left"></i>
             </button>
             <Transition name="lbimg" mode="out-in">
               <img :key="gallery.i" :src="current.images[gallery.i]" :alt="current.name" class="max-h-full max-w-full rounded-lg object-contain shadow-2xl" />
             </Transition>
-            <button v-if="current.images.length > 1" type="button" aria-label="Next" class="absolute right-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/40 bg-black/70 text-2xl text-white shadow-lg backdrop-blur hover:bg-[#FD6F00] md:right-6" @click="step(1)">
+            <button v-if="current.images.length > 1" type="button" aria-label="Next" class="absolute right-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/40 bg-black/70 text-2xl text-white shadow-lg backdrop-blur hover:bg-[#22c55e] md:right-6" @click="step(1)">
               <i class="bx bx-chevron-right"></i>
             </button>
           </div>
 
           <div v-if="current.images.length > 1" class="flex justify-center gap-2 overflow-x-auto px-4 py-4">
             <button v-for="(img, i) in current.images" :key="i" type="button" class="h-16 w-24 shrink-0 overflow-hidden rounded-md border-2 transition"
-              :class="i === gallery.i ? 'border-[#FD6F00]' : 'border-transparent opacity-60 hover:opacity-100'" @click="gallery.i = i">
+              :class="i === gallery.i ? 'border-[#22c55e]' : 'border-transparent opacity-60 hover:opacity-100'" @click="gallery.i = i">
               <img :src="img" alt="" class="h-full w-full object-cover object-top" />
             </button>
           </div>
@@ -300,6 +307,9 @@ import snkr1 from "@/assets/images/Sneackers/desktop.png";
 import snkr2 from "@/assets/images/Sneackers/mobile.png";
 import snkr3 from "@/assets/images/Sneackers/sneakers.png";
 import medbozor from "@/assets/images/MedBozor.png";
+import itCabinet from "@/assets/images/ITPark/cabinet.png";
+import itMyitpark from "@/assets/images/ITPark/myitpark.png";
+import itRelocation from "@/assets/images/ITPark/relocation.png";
 
 useHead({
   title: "Shahboz Mamatkarimov — Software Engineer",
@@ -388,9 +398,22 @@ const stack = [
   },
 ];
 
+const categories = ["All", "IT Park", "Platforms", "E-commerce"];
+const filter = ref("All");
+// spans follow the position among the visible cards, so every filter keeps a tidy grid
+const spanOf = (idx) => {
+  const shown = projects.map((p, i) => i).filter((i) => filter.value === "All" || projects[i].cat === filter.value);
+  const pos = shown.indexOf(idx);
+  const n = shown.length;
+  if (n % 3 === 0 || n === 1) return "xl:col-span-2";
+  if (n % 3 === 1 && pos >= n - 4 || n % 3 === 2 && pos >= n - 2) return "xl:col-span-3";
+  return "xl:col-span-2";
+};
+
 const projects = [
   {
     name: "Skool.uz",
+    cat: "Platforms",
     type: "Online course platform",
     text: "Community, courses and classroom in one learning platform.",
     url: "https://learnify.uz",
@@ -399,6 +422,7 @@ const projects = [
   },
   {
     name: "Florify.uz",
+    cat: "E-commerce",
     type: "Flower e-commerce",
     text: "Online flower store with a clean catalogue and ordering flow.",
     url: "https://florify.uz",
@@ -407,6 +431,7 @@ const projects = [
   },
   {
     name: "Digital Legal Assistant",
+    cat: "Platforms",
     type: "Legal SaaS",
     text: "Team workspace with client info, activity feed and group chat.",
     url: "https://dev-dla.newtribe.nl",
@@ -416,6 +441,7 @@ const projects = [
   },
   {
     name: "Sneakers Store",
+    cat: "E-commerce",
     type: "E-commerce",
     text: "Responsive sneakers shop built as a two-person frontend team.",
     url: "https://dev-ecommsnkr.newtribe.nl",
@@ -425,11 +451,42 @@ const projects = [
   },
   {
     name: "MedBozor.uz",
+    cat: "E-commerce",
     type: "Medical marketplace",
     text: "Marketplace for medical products, built with a two-person frontend team.",
     url: "https://medbozor.uz",
     images: [medbozor],
     tags: ["Frontend", "Marketplace"],
+  },
+  {
+    name: "IT Park Cabinet",
+    cat: "IT Park",
+    type: "CRM · Internal platform",
+    text: "Large CRM for IT Park Uzbekistan: companies, residents, reports, applications, IT visa and more, split into 8 modules.",
+    url: "https://cabinet.it-park.uz/",
+    images: [itCabinet],
+    fit: true,
+    tags: ["Frontend", "CRM", "Dashboard"],
+  },
+  {
+    name: "My IT Park",
+    cat: "IT Park",
+    type: "Resident portal",
+    text: "Public portal for becoming an IT Park resident, with a tax calculator and a resident cabinet.",
+    url: "https://my.it-park.uz/?lang=en",
+    images: [itMyitpark],
+    fit: true,
+    tags: ["Frontend", "Portal"],
+  },
+  {
+    name: "IT Relocation",
+    cat: "IT Park",
+    type: "Relocation platform",
+    text: "Gateway for IT professionals moving to Uzbekistan: IT visa, guide, success stories and applications.",
+    url: "https://it-relocation.uz/",
+    images: [itRelocation],
+    fit: true,
+    tags: ["Frontend", "Multilingual"],
   },
 ];
 
@@ -438,7 +495,7 @@ const bento = [
   { icon: "bx bx-layout", title: "Frontend engineering", span: "md:col-span-2", text: "Fast, accessible, responsive interfaces in Vue/Nuxt and React/Next, with clean component architecture and polished interactions." },
   { icon: "bx bx-server", title: "Backend & APIs", span: "", text: "REST APIs and services with Node.js and NestJS, backed by PostgreSQL and MongoDB." },
   { icon: "bx bx-wifi", title: "Realtime", span: "", text: "Live features such as chat and calls with Socket.io and WebRTC." },
-  { icon: "bx bx-rocket", title: "Shipped to production", span: "md:col-span-2", text: "Five live products for real users, built in teams and delivered end to end — from design handoff to deployment." },
+  { icon: "bx bx-rocket", title: "Shipped to production", span: "md:col-span-2", text: "Eight live products for real users, built in teams and delivered end to end — from design handoff to deployment." },
 ];
 
 const contacts = [
@@ -448,7 +505,7 @@ const contacts = [
   { label: "GitHub", icon: "bx bxl-github", value: "shahbozmamatkarimov", href: "https://github.com/shahbozmamatkarimov", external: true },
 ];
 
-const facts = ["Frontend-focused full-stack engineer", "5 live products shipped", "Works in teams & ships to production"];
+const facts = ["Frontend-focused full-stack engineer", `${projects.length} live products shipped`, "Works in teams & ships to production"];
 // project gallery lightbox
 const gallery = reactive({ open: false, p: 0, i: 0 });
 const current = computed(() => projects[gallery.p]);
@@ -498,7 +555,7 @@ async function copyEmail() {
 // animated counters
 const stats = reactive([
   { target: years, suffix: "+", label: "Years of experience", shown: 0 },
-  { target: 5, suffix: "", label: "Live products shipped", shown: 0 },
+  { target: projects.length, suffix: "", label: "Live products shipped", shown: 0 },
   { target: 3, suffix: "", label: "Companies", shown: 0 },
   { target: stack.reduce((n, g) => n + g.items.length, 0), suffix: "", label: "Technologies", shown: 0 },
 ]);
@@ -570,7 +627,7 @@ onMounted(async () => {
 .hero-role { margin-top: 0.5rem; font-size: clamp(2.25rem, 9vw, 4rem); font-weight: 900; line-height: 1; letter-spacing: -0.03em; }
 
 .gradient-text {
-  background: linear-gradient(100deg, #fd6f00, #ff3d77 45%, #a855f7 90%);
+  background: linear-gradient(100deg, #22c55e, #0d9488 45%, #0f766e 90%);
   background-size: 200% auto;
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
@@ -583,17 +640,20 @@ onMounted(async () => {
   border-radius: 9999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05);
   padding: 0.4rem 1rem; font-size: 0.875rem; color: #d4d4d8; backdrop-filter: blur(8px);
 }
-.caret { display: inline-block; width: 8px; height: 1.1em; margin-left: 2px; vertical-align: -3px; background: #fd6f00; animation: blink 1s steps(1) infinite; }
+.caret { display: inline-block; width: 8px; height: 1.1em; margin-left: 2px; vertical-align: -3px; background: #22c55e; animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
 .btn-primary, .btn-ghost {
   display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 0.875rem;
   padding: 0.85rem 1.75rem; font-weight: 600; transition: all .25s;
 }
-.btn-primary { background: linear-gradient(100deg, #fd6f00, #ff3d77); color: #fff; box-shadow: 0 10px 40px -10px rgba(253,111,0,.7);
+.filter-chip { border-radius: 9999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); padding: .45rem 1rem; font-size: .875rem; color: #d4d4d8; transition: background .2s, border-color .2s, color .2s, transform .2s; }
+.filter-chip:hover { border-color: #22c55e; color: #fff; transform: translateY(-1px); }
+.filter-chip.on { background: #22c55e; border-color: #22c55e; color: #052e16; font-weight: 600; }
+.btn-primary { background: linear-gradient(100deg, #22c55e, #0d9488); color: #fff; box-shadow: 0 10px 40px -10px rgba(34,197,94,.7);
   &:hover { transform: translateY(-2px); box-shadow: 0 16px 50px -10px rgba(255,61,119,.8); } }
 .btn-ghost { border: 1px solid rgba(255,255,255,.18); color: #e4e4e7; background: rgba(255,255,255,.03); backdrop-filter: blur(8px);
-  &:hover { border-color: #fd6f00; color: #fd6f00; transform: translateY(-2px); } }
+  &:hover { border-color: #22c55e; color: #22c55e; transform: translateY(-2px); } }
 
 /* glass card with cursor spotlight */
 .glass {
@@ -603,11 +663,11 @@ onMounted(async () => {
 }
 .spot::before {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s;
-  background: radial-gradient(380px circle at var(--x, 50%) var(--y, 50%), rgba(253,111,0,.16), transparent 60%);
+  background: radial-gradient(380px circle at var(--x, 50%) var(--y, 50%), rgba(34,197,94,.16), transparent 60%);
 }
 .spot:hover::before { opacity: 1; }
-.spot:hover { border-color: rgba(253,111,0,.35); }
-.tilt { transition: transform .15s ease-out; will-change: transform; box-shadow: 0 30px 80px -30px rgba(253,111,0,.35); }
+.spot:hover { border-color: rgba(34,197,94,.35); }
+.tilt { transition: transform .15s ease-out; will-change: transform; box-shadow: 0 30px 80px -30px rgba(34,197,94,.35); }
 
 /* code colors */
 pre { color: #d4d4d8; }
@@ -627,10 +687,10 @@ pre { color: #d4d4d8; }
 .marquee-track { display: flex; width: max-content; gap: 1.25rem; animation: marquee 40s linear infinite; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
-.dot { position: absolute; left: -41px; top: 1.75rem; height: 1rem; width: 1rem; border-radius: 9999px; background: #09090b; border: 2px solid #fd6f00; box-shadow: 0 0 18px rgba(253,111,0,.8); }
+.dot { position: absolute; left: -41px; top: 1.75rem; height: 1rem; width: 1rem; border-radius: 9999px; background: #09090b; border: 2px solid #22c55e; box-shadow: 0 0 18px rgba(34,197,94,.8); }
 .chip { border-radius: 9999px; background: rgba(255,255,255,.06); padding: .25rem .75rem; font-size: .75rem; color: #a1a1aa; }
 
-.cta { border-radius: 1.75rem; padding: 1px; background: linear-gradient(120deg, #fd6f00, #ff3d77, #a855f7, #fd6f00); background-size: 300% 300%; animation: border-move 8s linear infinite; }
+.cta { border-radius: 1.75rem; padding: 1px; background: linear-gradient(120deg, #22c55e, #0d9488, #0f766e, #22c55e); background-size: 300% 300%; animation: border-move 8s linear infinite; }
 .cta-inner { border-radius: calc(1.75rem - 1px); background: radial-gradient(70% 120% at 50% 0%, #2a1408, #0b0b0e 70%); }
 @keyframes border-move { 50% { background-position: 100% 50%; } }
 
@@ -639,7 +699,7 @@ pre { color: #d4d4d8; }
 .lbimg-enter-active, .lbimg-leave-active { transition: opacity .25s ease, transform .25s ease; }
 .lbimg-enter-from { opacity: 0; transform: scale(.96) translateX(16px); }
 .lbimg-leave-to { opacity: 0; transform: scale(.96) translateX(-16px); }
-.spot:hover { transform: translateY(-4px); box-shadow: 0 24px 60px -24px rgba(253,111,0,.35); }
+.spot:hover { transform: translateY(-4px); box-shadow: 0 24px 60px -24px rgba(34,197,94,.35); }
 .glass { transition: transform .4s cubic-bezier(.22,1,.36,1), border-color .3s, box-shadow .4s; }
 /* text reveal: blur + tracking settle as the text scrolls in (only while AOS is active and hasn't revealed it yet) */
 h1[data-aos], h2[data-aos], p[data-aos], li[data-aos] {
@@ -651,7 +711,7 @@ h2.aos-init:not(.aos-animate) { letter-spacing: .04em; }
 .section-title { position: relative; padding-bottom: .6rem; }
 .section-title::after {
   content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 64px; border-radius: 3px;
-  background: linear-gradient(90deg, #fd6f00, #ec4899); transform: scaleX(0); transform-origin: left;
+  background: linear-gradient(90deg, #22c55e, #14b8a6); transform: scaleX(0); transform-origin: left;
   transition: transform .8s cubic-bezier(.22,1,.36,1) .35s;
 }
 .section-title.aos-animate::after { transform: scaleX(1); }
